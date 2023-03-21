@@ -9,5 +9,7 @@ public class test {
 	 
 	 System.out.println("재은 씀");
 	 
+	 System.out.println("민성 씀");
+	 
  }
 }
