@@ -5,7 +5,7 @@ public class test {
 		
 	 System.out.println("준하 씀");
 		
-		
+	 System.out.println("선호 씀");
 		
 		
  }
