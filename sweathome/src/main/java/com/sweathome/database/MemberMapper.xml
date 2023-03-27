@@ -6,5 +6,39 @@
   		mapper의 경로를 작성 -->
 <mapper namespace="com.sweathome.database.MemberMapper">
 
+	<insert id="user_insert" parameterType="com.sweathome.domain.projectuser">
+		INSERT INTO tb_user(USER_ID, USER_PW, USER_NAME, USER_PHONE, USER_HEIGHT, USER_AGE, USER_GENDER, USER_WEIGHT, USER_WEIGHT, USER_PURPOSE, USER_MOMENT, USER_DIET_DAY, USER_MOMENT_CALORIES, USER_CALORIES, USER_CARBOHYDRATE, USER_PROTEIN, USER_FAT, USER_ACCU,POINT, USER_POINT, USER_JOINDATE, USER_TYPE) VALUES(#{USER_ID},#{USER_PW},#{USER_NAME},#{USER_PHONE},#{USER_HEIGHT},#{USER_AGE},#{USER_GENDER},#{USER_WEIGHT},#{USER_PURPOSE},#{USER_MOMENT},#{USER_DIET_DAY},#{USER_MOMENT_CALORIES},#{USER_CALORIES},#{USER_CARBOHYDRATE},#{USER_PROTEIN},#{USER_FAT},#{USER_ACCU_POINT},#{USER_POINT},sysdate,#{USER_TYPE});
+	</insert>
+	
+	<select id="user_select" parameterType="com.sweathome.domain.mb_user" resultType="com.sweathome.domain.mb_user">
+		select * from TB_USER where #{USER_ID}=USER_ID and #{USER_PW}=USER_PW 
+	</select>
+	
+	<delete id="user_delete" parameterType="com.sweathome.domain.mb_user">
+		delete from TB_USER where USER_ID=#{USER_ID} AND #{USER_PW}=USER_PW 	
+	</delete>
+	
+	<update id="user_update" parameterType="com.sweathome.domain.">
+		update TB_USER set USER_ID = #{USER_ID}, 
+    USER_PW = #{USER_PW}, 
+    USER_NAME = #{USER_NAME}, 
+    user_phone = #{USER_PHONE}, 
+    user_height = #{USER_HEIGHT}, 
+    user_age = #{USER_AGE}, 
+    user_gender = #{USER_GENDER}, 
+    user_weight = #{USER_WEIGHT}, 
+    user_purpose = #{USER_PURPOSE}, 
+    user_moment = #{USER_MOMENT}, 
+    user_diet_day = #{USER_DIET_DAY}, 
+    user_calories = #{USER_CALORIES}, 
+    user_carbohydrate = #{USER_CARBOHYDRATE}, 
+    user_protein = #{USER_PROTEIN}, 
+    user_fat = #{USER_FAT}, 
+    user_moment_calories = #{USER_MOMENT_CALORIES}, 
+    user_accu_point = #{USER_ACCU_POINT}, 
+    user_point = USER_{POINT}, 
+    user_joindate = USER_{JOINDATE}, 
+    where USER_ID=#{USER_ID} AND USER_PW=#{USER_PW}
+	</update>
 	
 </mapper>

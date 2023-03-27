@@ -25,6 +25,11 @@
   		<artifactId>ibatis-core</artifactId>
   		<version>3.0</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.smhrd</groupId>
+  		<artifactId>MessageSystem</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
   <build>
   	<plugins>
