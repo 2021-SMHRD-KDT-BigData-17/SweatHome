@@ -46,6 +46,18 @@
   	<description></description>
   	<servlet-class>com.sweathome.controller.updatecon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>recomment</servlet-name>
+  	<display-name>recomment</display-name>
+  	<description></description>
+  	<servlet-class>com.sweathome.controller.recomment</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Algorithm</servlet-name>
+  	<display-name>Algorithm</display-name>
+  	<description></description>
+  	<servlet-class>com.sweathome.controller.Algorithm</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -73,5 +85,13 @@
   <servlet-mapping>
   	<servlet-name>updatecon</servlet-name>
   	<url-pattern>/updatecon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>recomment</servlet-name>
+  	<url-pattern>/recomment</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Algorithm</servlet-name>
+  	<url-pattern>/Algorithm</url-pattern>
   </servlet-mapping>
 </web-app>

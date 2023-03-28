@@ -16,8 +16,8 @@ public class Logincon extends HttpServlet {
 	
 		request.setCharacterEncoding("utf-8");
 		
-		String USER_ID = request.getParameter("user_id");
-		String USER_PW = request.getParameter("user_pw");
+		String USER_ID = request.getParameter("id");
+		String USER_PW = request.getParameter("password");
 		
 		DAO dao = new DAO();
 		
@@ -32,8 +32,9 @@ public class Logincon extends HttpServlet {
 			// servler에서 session을 사용하는 경우엔 Session객체 생성
 			HttpSession session = request.getSession();
 			session.setAttribute("user_login", user_login);
-			
+			System.out.println("로그인 성공");
 		}else {
+			System.out.println("로그인 실패");
 			// 로그인 실패 창
 		}
 		

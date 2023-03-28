@@ -15,7 +15,7 @@ public class SqlSessionManager {
 	static {
 
 		try {
-			String resource = "com/smhrd/sweathome/config.xml";
+			String resource = "com/sweathome/database/config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			// DB 연결을 미리 해놓음(connection Pool : CP)
 			// DB 연결 할때마다 낭비되는 자원을 아낄 수 있음

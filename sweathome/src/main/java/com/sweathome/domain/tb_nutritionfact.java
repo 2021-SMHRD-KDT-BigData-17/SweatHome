@@ -11,6 +11,7 @@ public class tb_nutritionfact {
 	private int SERVING_SIZE; // 1회 제공량
 	private String SERVING_GRAM; // 1회 제공량 단위
 	private String ADMIN_ID; // 관리자 아이디
+	
 	public int getNUTRI_IDX() {
 		return NUTRI_IDX;
 	}
@@ -77,6 +78,18 @@ public class tb_nutritionfact {
 		SERVING_SIZE = sERVING_SIZE;
 		SERVING_GRAM = sERVING_GRAM;
 		ADMIN_ID = aDMIN_ID;
+	}
+	public tb_nutritionfact(int nUTRI_IDX, String fOOD_NAME, int cARBOHYDRATE, int pROTEIN, int fAT, int cALORIES,
+			int sERVING_SIZE, String sERVING_GRAM) {
+		super();
+		NUTRI_IDX = nUTRI_IDX;
+		FOOD_NAME = fOOD_NAME;
+		CARBOHYDRATE = cARBOHYDRATE;
+		PROTEIN = pROTEIN;
+		FAT = fAT;
+		CALORIES = cALORIES;
+		SERVING_SIZE = sERVING_SIZE;
+		SERVING_GRAM = sERVING_GRAM;
 	}
 	
 	

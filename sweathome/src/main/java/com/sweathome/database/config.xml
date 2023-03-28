@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<!-- DB연결 정보가 담겨있는 파일(db.properties) 연결하는 태그 -->
-	<properties resource="com/sweathome/database/db.properties" />
+	<properties resource="com/sweathome/database/db.properties"/>
 	
   <environments default="development">
     <environment id="development">

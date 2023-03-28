@@ -6,20 +6,61 @@
   		mapper의 경로를 작성 -->
 <mapper namespace="com.sweathome.database.MemberMapper">
 
-	<insert id="user_insert" parameterType="com.sweathome.domain.projectuser">
-		INSERT INTO tb_user(USER_ID, USER_PW, USER_NAME, USER_PHONE, USER_HEIGHT, USER_AGE, USER_GENDER, USER_WEIGHT, USER_WEIGHT, USER_PURPOSE, USER_MOMENT, USER_DIET_DAY, USER_MOMENT_CALORIES, USER_CALORIES, USER_CARBOHYDRATE, USER_PROTEIN, USER_FAT, USER_ACCU,POINT, USER_POINT, USER_JOINDATE, USER_TYPE) VALUES(#{USER_ID},#{USER_PW},#{USER_NAME},#{USER_PHONE},#{USER_HEIGHT},#{USER_AGE},#{USER_GENDER},#{USER_WEIGHT},#{USER_PURPOSE},#{USER_MOMENT},#{USER_DIET_DAY},#{USER_MOMENT_CALORIES},#{USER_CALORIES},#{USER_CARBOHYDRATE},#{USER_PROTEIN},#{USER_FAT},#{USER_ACCU_POINT},#{USER_POINT},sysdate,#{USER_TYPE});
+	<insert id="user_insert" parameterType="com.sweathome.domain.mb_user">
+		INSERT INTO mb_user
+    (user_id, 
+    user_pw, 
+    user_name, 
+    user_phone, 
+    user_height, 
+    user_age, 
+    user_gender, 
+    user_weight, 
+    user_purpose, 
+    user_moment, 
+    user_diet_day, 
+    user_calories, 
+    user_carbohydrate, 
+    user_protein, 
+    user_fat, 
+    user_moment_calories, 
+    user_accu_point, 
+    user_point, 
+    user_joindate, 
+    user_type)
+VALUES
+    (#{USER_ID}, 
+    #{USER_PW}, 
+    #{USER_NAME}, 
+    #{USER_PHONE}, 
+    #{USER_HEIGHT}, 
+    #{USER_AGE}, 
+    #{USER_GENDER}, 
+    #{USER_WEIGHT}, 
+    #{USER_PURPOSE}, 
+    #{USER_MOMENT}, 
+    #{USER_DIET_DAY}, 
+    #{USER_CALORIES}, 
+    #{USER_CARBOHYDRATE}, 
+    #{USER_PROTEIN}, 
+    #{USER_FAT}, 
+    #{USER_MOMENT_CALORIES}, 
+    #{USER_ACCU_POINT}, 
+    #{USER_POINT}, 
+    SYSDATE, 
+    #{USER_TYPE})
 	</insert>
 	
 	<select id="user_select" parameterType="com.sweathome.domain.mb_user" resultType="com.sweathome.domain.mb_user">
-		select * from TB_USER where #{USER_ID}=USER_ID and #{USER_PW}=USER_PW 
+		select * from MB_USER where #{USER_ID}=USER_ID and #{USER_PW}=USER_PW 
 	</select>
 	
 	<delete id="user_delete" parameterType="com.sweathome.domain.mb_user">
-		delete from TB_USER where USER_ID=#{USER_ID} AND #{USER_PW}=USER_PW 	
+		delete from MB_USER where USER_ID=#{USER_ID} AND #{USER_PW}=USER_PW 	
 	</delete>
 	
-	<update id="user_update" parameterType="com.sweathome.domain.">
-		update TB_USER set USER_ID = #{USER_ID}, 
+	<update id="user_update" parameterType="com.sweathome.domain.mb_user">
+		update MB_USER set USER_ID = #{USER_ID}, 
     USER_PW = #{USER_PW}, 
     USER_NAME = #{USER_NAME}, 
     user_phone = #{USER_PHONE}, 

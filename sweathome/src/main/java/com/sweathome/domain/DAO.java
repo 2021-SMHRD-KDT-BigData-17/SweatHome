@@ -1,10 +1,8 @@
 package com.sweathome.domain;
 
-import org.apache.catalina.connector.Response;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.smhrd.domain.Member;
 import com.sweathome.database.SqlSessionManager;
 
 public class DAO {
