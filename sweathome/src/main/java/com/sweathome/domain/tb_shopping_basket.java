@@ -51,6 +51,13 @@ public class tb_shopping_basket {
 		PROD_CNT = pROD_CNT;
 		RDG_DATE = rDG_DATE;
 	}
+	public tb_shopping_basket(String uSER_ID, int pROD_IDX, int pROD_CNT, int rDG_DATE) {
+		super();
+		USER_ID = uSER_ID;
+		PROD_IDX = pROD_IDX;
+		PROD_CNT = pROD_CNT;
+		RDG_DATE = rDG_DATE;
+	}
 	
 	
 	

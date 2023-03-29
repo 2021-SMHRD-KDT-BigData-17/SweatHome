@@ -37,6 +37,12 @@ public class tb_orderdetail {
 		PROD_IDX = pROD_IDX;
 		OD_CNT = oD_CNT;
 	}
+	public tb_orderdetail(int oRDER_IDX, int pROD_IDX, int oD_CNT) {
+		super();
+		ORDER_IDX = oRDER_IDX;
+		PROD_IDX = pROD_IDX;
+		OD_CNT = oD_CNT;
+	}
 	
 	
 	

@@ -51,6 +51,9 @@ VALUES
     #{USER_TYPE})
 	</insert>
 	
+	<insert id="shoppint_basket_insert" parameterType="com.sweathome.domain.tb_shopping_basket">
+		insert into shopping_basket(user_id, prod_idx, prod_cnt, reg_date) values (#{USER_ID}, #{PROD_IDX}, #{PROD_CNT}, SYSDATE)
+	</insert>
 	<select id="user_select" parameterType="com.sweathome.domain.mb_user" resultType="com.sweathome.domain.mb_user">
 		select * from MB_USER where #{USER_ID}=USER_ID and #{USER_PW}=USER_PW 
 	</select>
@@ -64,6 +67,11 @@ VALUES
 	<select id="product_select_fat" parameterType="int" resultType="com.sweathome.domain.tb_product">
 		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{fat}-10 AND #{fat}+10
 	</select>
+	
+	<select id="prod_idx_select" parameterType="String" resultType="int">
+		select prod_idx from TB_PRODUCT where prod_name = #{prod_name}
+	</select>
+	
 	
 	<delete id="user_delete" parameterType="com.sweathome.domain.mb_user">
 		delete from MB_USER where USER_ID=#{USER_ID} AND #{USER_PW}=USER_PW 	

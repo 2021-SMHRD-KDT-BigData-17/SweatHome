@@ -143,4 +143,56 @@ public class DAO {
 			} // finally 끝
 			return cnt;
 		}
+		
+		public int prod_idx_select(String prod_name) {
+			int prod_idx = 0;
+			
+			try {
+				prod_idx = sqlSession.selectOne("prod_idx_select", prod_name);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			
+			return prod_idx;
+		}
+		
+		public int shopping_basket_insert(tb_shopping_basket basket) {
+			int cnt = 0;
+			try {
+				cnt = sqlSession.insert("shoppint_basket_insert", basket);
+				if(cnt>0) {
+					System.out.println("DAO에서는 회원가입 성공");
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			} // finally 끝
+			return cnt;
+}
+//		public int product_stock_minus() {
+//			int cnt=0;
+//			
+//			try {
+//				cnt = sqlSession.insert("product_stock_minus", user_update);
+//				if(cnt>0) {
+//					System.out.println("상품재고 차감 성공");
+//					sqlSession.commit();
+//				}else {
+//					sqlSession.rollback();
+//				}
+//			}catch (Exception e) {
+//				e.printStackTrace();
+//			}finally {
+//				sqlSession.close();
+//			} // finally 끝
+//			return cnt;
+//	}
+//		
+		
 }

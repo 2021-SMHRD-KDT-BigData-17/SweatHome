@@ -15,6 +15,7 @@ public class Logincon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		request.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
 		
 		String USER_ID = request.getParameter("id");
 		String USER_PW = request.getParameter("password");
@@ -30,7 +31,6 @@ public class Logincon extends HttpServlet {
 			
 			// 로그인 한 사람의 정보를 세션에 저장 후, main.jsp로 이동
 			// servler에서 session을 사용하는 경우엔 Session객체 생성
-			HttpSession session = request.getSession();
 			session.setAttribute("user_login", user_login);
 			System.out.println("로그인 성공");
 		}else {

@@ -64,6 +64,24 @@
   	<description></description>
   	<servlet-class>com.sweathome.controller.Ordercon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Shopping_basketcon</servlet-name>
+  	<display-name>Shopping_basketcon</display-name>
+  	<description></description>
+  	<servlet-class>com.sweathome.controller.Shopping_basketcon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>product_minus_con</servlet-name>
+  	<display-name>product_minus_con</display-name>
+  	<description></description>
+  	<servlet-class>com.sweathome.controller.product_minus_con</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Orderdetailcon</servlet-name>
+  	<display-name>Orderdetailcon</display-name>
+  	<description></description>
+  	<servlet-class>com.sweathome.controller.Orderdetailcon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -103,5 +121,17 @@
   <servlet-mapping>
   	<servlet-name>Ordercon</servlet-name>
   	<url-pattern>/Ordercon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Shopping_basketcon</servlet-name>
+  	<url-pattern>/Shopping_basketcon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>product_minus_con</servlet-name>
+  	<url-pattern>/product_minus_con</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Orderdetailcon</servlet-name>
+  	<url-pattern>/Orderdetailcon</url-pattern>
   </servlet-mapping>
 </web-app>

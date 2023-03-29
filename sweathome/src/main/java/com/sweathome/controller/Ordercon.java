@@ -17,20 +17,26 @@ public class Ordercon extends HttpServlet {
 	
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		
 		mb_user order = (mb_user) session.getAttribute("user_login");
-		String USER_ID = order.getUSER_ID();
+
+		
+		String USER_ID = order.getUSER_ID(); // 세선에 저장된 유저의 아이디
 		int POINT = order.getUSER_POINT(); // 세션에 저장된 유저의 원래 포인트
 		int TOTAL_AMOUNT = Integer.parseInt(request.getParameter(""));
 		int USER_POINT = (int) (POINT + TOTAL_AMOUNT*0.01); // 적립되는 포인트
 		
+		
+		
 		tb_order user_order = new tb_order(USER_ID, TOTAL_AMOUNT, USER_POINT);
-				
 		DAO dao = new DAO();
+		
 		int order_cnt = dao.order_insert(user_order);
+		
 		
 		if(order_cnt >0) {
 			System.out.println("주문 성공");
+			// 성공했다면 셀렉트해서 세션에 저장
+			
 			response.sendRedirect(""); // 주문성공 페이지
 		}else {
 			System.out.println("주문 실패");
