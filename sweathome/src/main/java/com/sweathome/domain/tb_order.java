@@ -6,7 +6,7 @@ public class tb_order {
 	private String ORDER_DT; // 주문 일자
 	private int TOTAL_AMOUNT; // 총 주문 가격
 	private int USER_POINT; // 적립금
-	private char ORDER_STATUS; // 주문상태 (상품준비:0, 배송중:1, 배송완료:2)
+	private int ORDER_STATUS; // 주문상태 (상품준비:0, 배송중:1, 배송완료:2)
 	public int getORDER_IDX() {
 		return ORDER_IDX;
 	}
@@ -37,14 +37,14 @@ public class tb_order {
 	public void setUSER_POINT(int uSER_POINT) {
 		USER_POINT = uSER_POINT;
 	}
-	public char getORDER_STATUS() {
+	public int getORDER_STATUS() {
 		return ORDER_STATUS;
 	}
 	public void setORDER_STATUS(char oRDER_STATUS) {
 		ORDER_STATUS = oRDER_STATUS;
 	}
 	public tb_order(int oRDER_IDX, String uSER_ID, String oRDER_DT, int tOTAL_AMOUNT, int uSER_POINT,
-			char oRDER_STATUS) {
+			int oRDER_STATUS) {
 		super();
 		ORDER_IDX = oRDER_IDX;
 		USER_ID = uSER_ID;
@@ -52,6 +52,12 @@ public class tb_order {
 		TOTAL_AMOUNT = tOTAL_AMOUNT;
 		USER_POINT = uSER_POINT;
 		ORDER_STATUS = oRDER_STATUS;
+	}
+	public tb_order(String uSER_ID, int tOTAL_AMOUNT, int uSER_POINT) {
+		super();
+		USER_ID = uSER_ID;
+		TOTAL_AMOUNT = tOTAL_AMOUNT;
+		USER_POINT = uSER_POINT;
 	}
 	
 	

@@ -78,6 +78,14 @@ public class tb_product {
 		PROD_PRICE = pROD_PRICE;
 		PROD_STOCK = pROD_STOCK;
 	}
+	public tb_product(int pROD_IDX, String pROD_NAME, int cARBOHYDRATE, int pROTEIN, int fAT) {
+		super();
+		PROD_IDX = pROD_IDX;
+		PROD_NAME = pROD_NAME;
+		CARBOHYDRATE = cARBOHYDRATE;
+		PROTEIN = pROTEIN;
+		FAT = fAT;
+	}
 	
 	
 	

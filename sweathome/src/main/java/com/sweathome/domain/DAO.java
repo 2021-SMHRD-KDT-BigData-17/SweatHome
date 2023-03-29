@@ -1,5 +1,7 @@
 package com.sweathome.domain;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -84,4 +86,61 @@ public class DAO {
 			} // finally 끝
 			return cnt;
 	}
+		
+		public List<tb_product> product_select_carbohydrate(int carbohydrate) {
+			List<tb_product> algorithm_product = null;
+			
+			try {
+				algorithm_product = sqlSession.selectList("product_select_carbohydrate", carbohydrate);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return algorithm_product;
+		}
+		
+		public List<tb_product> product_select_protein(int protein) {
+			List<tb_product> algorithm_product = null;
+			
+			try {
+				algorithm_product = sqlSession.selectList("product_select_protein", protein);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return algorithm_product;
+		}
+		
+		public List<tb_product> product_select_fat(int fat) {
+			List<tb_product> algorithm_product = null;
+			
+			try {
+				algorithm_product = sqlSession.selectList("product_select_fat", fat);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return algorithm_product;
+		}
+		
+		public int order_insert(tb_order order) {
+			int cnt = 0;
+			try {
+				cnt = sqlSession.insert("order_insert", order);
+				if(cnt>0) {
+					System.out.println("DAO에서는 주문서 입력 완료");
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			} // finally 끝
+			return cnt;
+		}
 }

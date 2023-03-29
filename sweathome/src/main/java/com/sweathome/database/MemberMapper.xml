@@ -55,6 +55,16 @@ VALUES
 		select * from MB_USER where #{USER_ID}=USER_ID and #{USER_PW}=USER_PW 
 	</select>
 	
+	<select id="product_select_carbohydrate" parameterType="int" resultType="com.sweathome.domain.tb_product">
+		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{carbohydrate}-20 AND #{carbohydrate}+20
+	</select>
+	<select id="product_select_protein" parameterType="int" resultType="com.sweathome.domain.tb_product">
+		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{protein}-15 AND #{carbohydrate}+15
+	</select>
+	<select id="product_select_fat" parameterType="int" resultType="com.sweathome.domain.tb_product">
+		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{fat}-10 AND #{fat}+10
+	</select>
+	
 	<delete id="user_delete" parameterType="com.sweathome.domain.mb_user">
 		delete from MB_USER where USER_ID=#{USER_ID} AND #{USER_PW}=USER_PW 	
 	</delete>
@@ -81,5 +91,10 @@ VALUES
     user_joindate = USER_{JOINDATE}, 
     where USER_ID=#{USER_ID} AND USER_PW=#{USER_PW}
 	</update>
+	
+	<insert id="order_insert" parameterType="com.sweathome.domain.tb_order">
+		insert into tb_order(user_id, ORDER_DT, TOTAL_AMOUNT, USER_POINT, ORDER_STATUS) values (#{USER_ID},SYSTATE, #{TOTAL_AMOUNT}, #{USER_POINT}, 0})
+	</insert>
+	
 	
 </mapper>

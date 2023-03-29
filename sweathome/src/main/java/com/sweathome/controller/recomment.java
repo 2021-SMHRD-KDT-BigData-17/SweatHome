@@ -25,7 +25,7 @@ public class recomment extends HttpServlet {
 		int USER_CARBOHYDRATE = user.getUSER_CARBOHYDRATE();
 		int USER_PROTEIN = user.getUSER_CARBOHYDRATE();
 		int USER_FAT = user.getUSER_CARBOHYDRATE();
-		int USER_CALRORIES = user.getUSER_CARBOHYDRATE();
+		int USER_CALRORIES = user.getUSER_CALORIES();
 		// 3. 진행했던 식단의 영양소 값 가져오기
 		int ATE_CARBOHYDRATE = Integer.parseInt(request.getParameter("ate_carbohydrate"));
 		int ATE_PROTEIN = Integer.parseInt(request.getParameter("ate_carbohydrate"));
