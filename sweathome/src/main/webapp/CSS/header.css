@@ -1,0 +1,119 @@
+@font-face {
+    font-family : 'ONE-Mobile-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 원스토어 모바일고딕 제목체 */
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HangeulNuri-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.top .utill_menu{
+    text-align: right;
+   
+    /* margin-right: 20px; */
+    font-size: 12px;
+  
+    list-style: none;
+}
+header {
+    background-color: white;
+    color: black;
+    
+    text-align: center;
+}
+header div img{
+    position: static;
+    width: 10%;
+    /* padding-left: 10%; */
+    height: 100px;
+
+}
+a{
+    text-decoration:none
+
+}
+hr{
+    margin-left : auto;
+  margin-right : auto;
+}
+#banner{
+    background-color: #fabfba;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'ONE-Mobile-Title';
+    padding: 10px;
+}
+
+/* 회원 관련 이미지=----------------------------------------------------------------------------------------------------------------------- */
+/* .in_Layer .utill_menu .JOINUS img{
+    padding-right: 15px;
+}
+.in_Layer .utill_menu .LOGIN img{
+    padding-right: 5px;
+}
+.in_Layer .utill_menu .Join{
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+.in_Layer .utill_menu .login{
+    position: absolute;
+    right: 6%;
+    top: 1%;
+}
+.in_Layer .utill_menu .goshop{
+    position: absolute;
+    right: 9%;
+    top:1%; 
+}*/
+/* 폰트------------------------------------------------------------------------------------------------------------------------------------ */
+.in_Layer .utill_menu .Join-text{
+   
+    padding-left: 10px;
+    padding-right: 30px;
+    
+}
+.in_Layer .utill_menu .login-text{
+   
+    padding-left: 10px;
+    
+}
+.in_Layer .utill_menu .goshop-text{
+    
+    
+    padding-left: 10px;
+}
+/* .in_Layer .utill_menu{
+    position: static;
+    font-size: 12px;
+    padding-right: 10px;
+    float: right;
+} */
+.utill_menu > a {
+    font-family: 'GmarketSansMedium';
+    font-weight: 700;
+}
+

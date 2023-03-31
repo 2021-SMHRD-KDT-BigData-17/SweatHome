@@ -1,0 +1,286 @@
+
+@font-face {
+    font-family : 'ONE-Mobile-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 원스토어 모바일고딕 제목체 */
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HangeulNuri-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    
+    margin: 0;
+    padding: 0;
+    /* height: 100% ; */
+}
+/* body {
+    display: flex;
+    flex-direction: column;
+} */
+
+h1{
+    font-family: 'GmarketSansMedium';
+}
+h2{
+    font-family: 'GmarketSansMedium';
+}
+
+section {
+    padding: 20px;
+}
+
+article {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+article h2 {
+    margin-top: 0;
+}
+/* 인기상품시작------------------------------------------------------------------------------------------------ */
+.slide-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-left: 0%;
+}
+
+.slide-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slide-controls button {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slide-controls button.active {
+    background-color: #666;
+}
+/* 인기상품끝------------------------------------------------------------------------------------------------------- */
+
+/* 미니바 시작--------------------------------------------------------------------------------------------------*/
+.quickbar {
+    border-radius: 10px;
+    border: 2px solid  #fabfba;
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 90%;
+    right:10px;
+    width: 5%px;
+    height: auto;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.quickbar .quick_banner {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    text-align: center;
+
+}
+
+
+.quickbar a {
+    color: black;
+    font-size: small;
+    text-decoration: none;
+    font-weight: bold;
+ 
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+}
+
+.quickbar a:hover {
+    background-color: #666;
+}
+.menu ul li a{
+    margin: 204px;
+}
+/* 퀵바 끝------------------------------------------------------------------------------------------------------------------------------- */
+
+.quick_top{
+    margin-bottom: 0;
+} 
+
+/* 추천상품------------------------------------------------------------------------------------------------------------------------------*/
+.RDproduct{
+    position: relative;
+   width: 50%;
+   float: left;
+   /* padding-bottom: 200px; */
+   
+    
+    /* padding-right: 5%; */
+}
+:root {
+    --main-color: blue;
+    --text-color: black;
+    --bg-color: white;
+
+}
+.product-box{
+position: relative;
+width: 50%;
+height: 450px;
+padding: 1%;
+float: left;
+
+}
+.product-box:hover{
+padding: 18px;
+/* border: 1px solid var(--text-color); */
+transition: 0.4s;
+}
+.product-img{
+width: 100%;
+height: 80%;
+margin-bottom: 0.5rem;
+}
+.product-title{
+font-size: 1.1rem;
+font-weight: 600;
+text-transform: uppercase;
+margin-bottom: 0.5rem;
+
+}
+.price{
+    font-weight: 500;
+
+}
+.add-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    cursor: pointer;
+}
+.add-cart:hover{
+    background: hsl(240,32%,17%);
+}
+#cart-icon{
+    font-size: 1.8rem;
+    cursor:pointer;
+}
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4px hsl(0, 4% 15% / 10%);
+    transition: 0.3s;
+}
+.cart-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+.cart.active{
+  right: 0;  
+}
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid #000;
+}
+.cart-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+}
+/* 칼로리검색기----------------------------------------------------------------------------------------------------------------------- */
+/* .Search{
+    padding-bottom: 200px;
+} */
+.food-list{
+   float: left;
+  /* padding-left:30% ;
+  padding-right:10% ;
+    border */
+    /* height: 1000px; */
+    width: 50%;
+    overflow: auto;
+    height: 850px;
+}
+.enter{
+    width: 50%;
+    float: left;
+}
+.youtub{
+    padding: 1.5%;
+}
+.youtub video{
+    padding:1.5%
+}

@@ -22,6 +22,14 @@ public class mb_user {
 	private int USER_POINT; // 유저 보유 포인트
 	private String USER_JOINDATE; // 유저 가입일자
 	private int USER_TYPE; // 관리자 구분(일반 사용자:0, 관리자:1)
+	
+	
+	
+	
+	
+	public mb_user() {
+		super();
+	}
 	public String getUSER_ID() {
 		return USER_ID;
 	}

@@ -129,14 +129,14 @@ public class Joincon extends HttpServlet {
 		//RequestDispatcher rd = request.getRequestDispatcher("");
 		//request.setAttribute("joinEmail", email);
 		//rd.forward(request, response);
-		response.sendRedirect("");
+		response.sendRedirect("main.html");
 		
 	}else {
 		System.out.println("JoinCon : 회원가입 실패!!");
 		//RequestDispatcher rd = request.getRequestDispatcher("joinSuccess.jsp");
 		//request.setAttribute("joinEmail", email);
 		//rd.forward(request, response);
-		response.sendRedirect("");
+		response.sendRedirect("login.html");
 		}
 	}
 

@@ -19,6 +19,9 @@ import com.sweathome.domain.tb_product;
 public class Algorithm extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		
+		// 탄수화물 - 단백질 - 지방 순으로 필요영양소에서 제품 영양소를 빼는 알고리즘
+		
 		// 1. 세션에 저장된 유저의 필요한 영양성분을 가져온다.
 		HttpSession session = request.getSession();
 		mb_user user = (mb_user) session.getAttribute("user_login");

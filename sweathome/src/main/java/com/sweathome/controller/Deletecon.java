@@ -14,6 +14,10 @@ import com.sweathome.domain.mb_user;
 public class Deletecon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		// 유저의 아이디와 비밀번호를 불러와서 일치하면 컬럼 삭제, 세션 삭제
+		
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		DAO dao = new DAO();

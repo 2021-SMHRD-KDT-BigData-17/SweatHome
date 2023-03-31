@@ -59,6 +59,11 @@ public class tb_order {
 		TOTAL_AMOUNT = tOTAL_AMOUNT;
 		USER_POINT = uSER_POINT;
 	}
+	public tb_order(String uSER_ID, int oRDER_STATUS) {
+		super();
+		USER_ID = uSER_ID;
+		ORDER_STATUS = oRDER_STATUS;
+	}
 	
 	
 	

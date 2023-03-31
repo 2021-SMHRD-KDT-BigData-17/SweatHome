@@ -35,7 +35,7 @@ public class DAO {
 		public mb_user user_select(mb_user login) {
 			mb_user loginMember = null;
 			try {
-				loginMember = sqlSession.selectOne("user_select", login);
+				loginMember = sqlSession.selectOne("user_login", login);
 			}catch (Exception e) {
 				e.printStackTrace();
 			}finally {
@@ -67,7 +67,7 @@ public class DAO {
 			return cnt;
 		}
 		
-		
+		// 회원 수정 기능
 		public int user_update(mb_user user_update) {
 			int cnt=0;
 			
@@ -87,6 +87,7 @@ public class DAO {
 			return cnt;
 	}
 		
+		// 일정범위내의 탄수화물 리스트를 가져오는 기능
 		public List<tb_product> product_select_carbohydrate(int carbohydrate) {
 			List<tb_product> algorithm_product = null;
 			
@@ -175,6 +176,52 @@ public class DAO {
 			} // finally 끝
 			return cnt;
 }
+		
+		public List<Integer> order_idx_selectAll(String user_name) {
+			
+			
+			List<Integer> order_idx_selectAll = null;
+			
+			try {
+				order_idx_selectAll = sqlSession.selectList("order_index selectAll", user_name);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			} // finally 끝
+			
+			return order_idx_selectAll;
+		}
+
+		
+		public List<tb_product> product_name_price_select() {
+			List<tb_product> product_name_price = null;
+			
+			try {
+				product_name_price = sqlSession.selectList("product_name_price_select");
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			
+			return product_name_price;
+		}
+		
+		public List<tb_product> product_page() {
+			List<tb_product> product_page = null;
+			
+			try {
+				product_page = sqlSession.selectList("product_page");
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			
+			return product_page;
+		}
+		
 //		public int product_stock_minus() {
 //			int cnt=0;
 //			
@@ -193,6 +240,6 @@ public class DAO {
 //			} // finally 끝
 //			return cnt;
 //	}
-//		
+		
 		
 }

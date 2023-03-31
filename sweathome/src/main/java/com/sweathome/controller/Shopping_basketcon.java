@@ -24,6 +24,7 @@ public class Shopping_basketcon extends HttpServlet {
 		// 클릭한 상품의 이름을 가져온다.
 		// 이름을 조건으로 상품의 인덱스값을 가져온다.
 		
+		
 		String USER_ID = user.getUSER_ID();
 		int PROD_IDX = dao.prod_idx_select(prod_name); 
 		int PROD_CNT = Integer.parseInt(request.getParameter("prod_cnt"));
@@ -38,8 +39,6 @@ public class Shopping_basketcon extends HttpServlet {
 		}else {
 			System.out.println("장바구니 담기 실패");
 		}
-	
-		
 		//세션에 객체 담기
 		session.setAttribute("basket", basket);
 		

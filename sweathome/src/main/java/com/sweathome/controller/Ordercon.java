@@ -36,8 +36,8 @@ public class Ordercon extends HttpServlet {
 		if(order_cnt >0) {
 			System.out.println("주문 성공");
 			// 성공했다면 셀렉트해서 세션에 저장
-			
 			response.sendRedirect(""); // 주문성공 페이지
+			
 		}else {
 			System.out.println("주문 실패");
 			response.sendRedirect(""); // 주문서 페이지

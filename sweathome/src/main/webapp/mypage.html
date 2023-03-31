@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my page</title>
+    <link rel="stylesheet" href="mypage.css">
+</head>
+
+<body>
+    <div class="path"></div>
+    <div id="container">
+        <div id="contents">
+            
+            <div class="user">
+                <div class="user_info">
+                    <div class="usertable">
+                        <div class="user_t">
+                            <div class="user_name">
+                                <div class="titleArea">
+                                    <h2>MY PAGE</h2>
+                                </div>
+                                <span class="txt">안녕하세요 000님!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area"></div>
+            <div class="member-edit">
+                <div class="table">
+                    <table border="1">
+
+
+                        <colgroup>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr class="content">
+                                <th scope="row" class="head">
+                                    아이디
+                                </th>
+
+                                <td>
+                                    <input id="member_id" class="input"  type="text">
+                                    <span class="txtInfo">(영문소문자/숫자 포함)</span>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <th scope="row" class="head">
+                                    비밀번호 변경
+                                </th>
+
+                                <td>
+
+                                    <input id="passwd" class="input" type="password">
+                                    <button id="postBtn" class="btnBasic" type="button"
+                                        style="cursor: pointer;">확인</button>
+                                    <span class="txtInfo">(영문소문자/숫자/특수문자 포함)</span>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <th scope="row" class="head">
+                                    비밀번호 확인
+                                </th>
+
+                                <td>
+                                    <input id="passwd_confirm" class="input" type="password">
+                                    <p class="txtInfo" id="pwconfirmMsg"></p>
+                                </td>
+                            </tr>
+
+                            <tr class="content">
+                                <th scope="row" class="head">
+                                    키
+                                </th>
+
+                                <td>
+                                    <input id="height" class="input" type="text">
+                                    cm
+                                    <p class="txtInfo" id="heightMsg"></p>
+
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <th scope="row" class="head">
+                                    몸무게
+                                </th>
+
+                                <td>
+                                    <input id="weight" class="input" type="text">
+                                    kg
+                                    <p class="txtInfo" id="weightMsg"></p>
+                                </td>
+                            </tr>
+                            <tr class="content">
+                                <th scope="row" class="head">
+                                    운동 목적
+                                </th>
+
+                                <td>
+                                    <input id="custom_select" type="radio" >
+                                    <label for="diet"> 다이어트</label>
+                                    <input id="custom_select" type="radio" >
+                                    <label for="bulk up"> 벌크업</label>
+                                    <input id="custom_select" type="radio" >
+                                    <label for="maintain">유지</label>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="base-button">
+                    <input type="button" value="취소" class="btn">
+                    <span>&nbsp;&nbsp;</span>
+                    <input type="button" value="회원정보수정" class="btn">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

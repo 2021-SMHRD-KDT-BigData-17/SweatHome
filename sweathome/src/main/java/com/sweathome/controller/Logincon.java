@@ -32,6 +32,7 @@ public class Logincon extends HttpServlet {
 			// 로그인 한 사람의 정보를 세션에 저장 후, main.jsp로 이동
 			// servler에서 session을 사용하는 경우엔 Session객체 생성
 			session.setAttribute("user_login", user_login);
+			response.sendRedirect("main.jsp");
 			System.out.println("로그인 성공");
 		}else {
 			System.out.println("로그인 실패");
@@ -39,8 +40,10 @@ public class Logincon extends HttpServlet {
 		}
 		
 		// 로그인을 성공했든 안했든 main.jsp 이동하기 때문에 한 번만 작성
-		response.sendRedirect("");
+		mb_user user = (mb_user) session.getAttribute("user_login");
 		
+		System.out.println(user.getUSER_AGE());
+		System.out.println(user.getUSER_HEIGHT());
 	}
 
 }

@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 13px;
+    color: #000;
+    background: #fff;
+    
+}
+.path{
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+}
+.member-edit .table {
+    border-top: 2px solid #1a1a1a;
+}
+#container {
+    width: 100%;
+    zoom: 1;
+    position: relative;
+    margin: 0 auto;
+}
+#contents{
+    margin-top: 0;
+}
+#container #contents {
+    width: 92%;
+    margin: 0 auto;
+    float: none;
+    padding: 0;
+}
+.titleArea {
+    margin: 25px 0;
+    text-align: center;
+}
+.titleArea h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1a1a1a;
+    display: inline-block;
+}
+.user_info{
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #f77870;
+    text-align: center;
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.usertable{
+    padding: 40px 0;
+    border-bottom: 1px solid #f77870;
+}
+.user_t{
+    display: block;
+    
+    margin: 0 auto;
+}
+.user_name{
+    display: block;
+    margin: 16px 0 8px;
+   
+  
+}
+.area{
+    margin: 50px 0 20px;
+    text-align: left;
+}
+.member-edit{
+    max-width: 720px;
+    margin: 0 auto;
+}
+.member-edit .table{
+    border-top: 2px solid #f77870;
+    border-bottom: 2px solid #f77870;
+}
+table{
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-indent: initial;
+    box-sizing: border-box;
+    text-indent: initial;
+}
+col{
+    display: table-column;
+    width: 190px;
+    width: auto;
+}
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  
+}
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    
+}
+.head{
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+}
+.table th{
+    border-bottom: 1px solid #f77870;
+    background-color: #fabfba;
+    
+}
+td{
+    padding: 10px 20px;
+    height: auto;
+    border-bottom: 1px solid #f77870;
+}
+.input{
+    width: 410px;
+    background: white;
+    height: 40px;
+    line-height: 40px;
+    padding: 2px 4px 2px 15px;
+    border: 1px solid #f77870;
+    color: #000;
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: 1px;
+}
+.txtInfo{
+    color: #868686;
+    font-size: 12px;
+    line-height: 22px;
+    display: block;
+    margin: 10px 0 0 0;
+}
+.btnBasic{
+    margin-left: 10px;
+    display: inline-block;
+    padding: 12px 20px;
+    height: 40px;
+    font-size: 13px;
+    box-sizing: border-box;
+    border: 1px solid #f77870;
+    line-height: 1;
+    font-weight: normal;
+    text-decoration: none;
+    vertical-align: middle;
+    word-spacing: -0.5px;
+    letter-spacing: 0;
+    text-align: center;
+    white-space: nowrap;
+    color: #000;
+    background-color: #fff;
+}
+#custom_select{
+    position: relative;
+    opacity: 1;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    border: 0;
+    background-size: 18px 18px;
+    outline: 0;
+}
+.base-button{
+    display: flex;
+    margin-top: 40px;
+    margin: 12px 0 0 0;
+    text-align: center;
+}
+.btn{
+    flex: 1;
+    height: 56px;
+    padding: 0;
+    line-height: 56px;
+    font-size: 16px;
+    border: 1px solid #f77870;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-decoration: none;
+    vertical-align: middle;
+    word-spacing: -0.5px;
+    letter-spacing: 0;
+    text-align: center;
+    white-space: nowrap;
+    color: #000;
+    background-color: #fff;
+}
+
+
