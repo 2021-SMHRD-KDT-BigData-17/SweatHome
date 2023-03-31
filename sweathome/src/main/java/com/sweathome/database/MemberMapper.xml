@@ -65,6 +65,12 @@ VALUES
 		
 	</select>
 	
+	<select id="nutritionfacts" resultType="com.sweathome.domain.tb_nutritionfact">
+		
+		select food_name, carbohydrate, protein, fat, calories, serving_size FROM tb_nutritionfact where nutri_idx between 373 and 387 
+		
+	</select>
+	
 	<select id="product_select_carbohydrate" parameterType="int" resultType="com.sweathome.domain.tb_product">
 		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{carbohydrate}-20 AND #{carbohydrate}+20
 	</select>

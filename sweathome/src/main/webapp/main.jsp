@@ -1,3 +1,4 @@
+<%@page import="com.sweathome.domain.tb_nutritionfact"%>
 <%@page import="com.sweathome.domain.tb_product"%>
 <%@page import="java.util.List"%>
 <%@page import="com.sweathome.domain.DAO"%>
@@ -8,8 +9,9 @@
 <%
 	mb_user user = (mb_user)session.getAttribute("user_login");
 	DAO dao = new DAO();
-	
 	List<tb_product> PRODUCT = dao.product_page();
+	
+	List<tb_nutritionfact> nutritionfacts = dao.nutritionfacts();
 %>
 <html lang="en">
 <head>
@@ -19,8 +21,7 @@
     <title>메인 화면</title>
 	<link rel="stylesheet" href="CSS/main.css">
 	<link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-	<script src="js/전자상거래.js"></script>
-	<link rel="stylesheet" href="/login.html">
+	<link rel="stylesheet" href="login.html">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript">
@@ -192,7 +193,7 @@
 						maxlength="50" size="60"  >
 					<!-- <input id="searchButton" type="image" src="" style="width:25px; height:25px;" alt="Submit Form"/> -->
 					<button class="searchButton">
-						<img class="searchButtonImg" alt="Submit Form" src="/img/돋보기.jpg" style="width:10px; height:10px;">
+						<img class="searchButtonImg" alt="Submit Form" src="img/돋보기.jpg" style="width:10px; height:10px;">
 					</button>
 				</form>
 			</div>
@@ -201,158 +202,25 @@
 				<table border-collapse="collapse">
 				<tr>
 					<th>선택</th>
-					<th style=" max-height: 10px;">음식명</th>
-					<th>양(g)</th>
-					<th>칼로리(cal)</th>
-					<th>탄수화물(g)</th>
-					<th>단백질(g)</th>
-					<th>지방(g)</th>
+					<th style=" max-height: 10px;">음식이름</th>
+					<th>1회 제공량(g)</th>
+					<th>칼로리</th>
+					<th>탄수화물</th>
+					<th>단백질</th>
+					<th>지방</th>
 				</tr>
 				
 					<tr>
-						<td><input type="checkbox" name="food-select" value="food1"></td>
-						<td>닭가슴살</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
+						<% for(int i =0; i<nutritionfacts.size(); i++){ %>
+						<td><input type="checkbox" name="food-select" value="food<%=i%>"></td>
+						<td><%=nutritionfacts.get(i).getFOOD_NAME()%></td>
+						<td><%=nutritionfacts.get(i).getSERVING_SIZE()%>g</td>
+						<td><%=nutritionfacts.get(i).getCALORIES() %></td>
+						<td><%=nutritionfacts.get(i).getCARBOHYDRATE() %></td>
+						<td><%=nutritionfacts.get(i).getPROTEIN() %></td>
+						<td><%=nutritionfacts.get(i).getFAT() %></td>
 					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value="food2"></td>
-						<td>닭가슴살1</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value="food3"></td>
-						<td>닭가슴살2</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value="food4"></td>
-						<td>닭가슴살3</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value="food5"></td>
-						<td>닭가슴살4</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살5</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살6</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살7</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살8</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살9</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살10</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살11</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살12</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살13</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>닭가슴살14</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
-						<td>발효곤약 짜장라면</td>
-						<td>100g</td>
-						<td>150</td>
-						<td>50</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
+					<%} %>
 
 				</table>
 				

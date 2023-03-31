@@ -216,7 +216,6 @@ public class DAO {
 			}catch(Exception e){
 				e.printStackTrace();
 			}finally {
-				sqlSession.close();
 			}
 			if(product_page != null) {
 				System.out.println("값 불러오기 성공");
@@ -225,6 +224,24 @@ public class DAO {
 			}
 			
 			return product_page;
+		}
+		
+		public List<tb_nutritionfact> nutritionfacts(){
+			List<tb_nutritionfact> nutritionfacts = null;
+			
+			try {
+				nutritionfacts = sqlSession.selectList("nutritionfacts");
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+			}
+			if(nutritionfacts != null) {
+				System.out.println("값 불러오기 성공");
+			}else {
+				System.out.println("실패");
+			}
+			
+			return nutritionfacts;
 		}
 		
 //		public int product_stock_minus() {
