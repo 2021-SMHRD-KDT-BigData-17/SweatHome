@@ -31,8 +31,6 @@ public class SqlSessionManager {
 	
 	// sqlSessionFactory를 DAO에서 사용할 수 있게 하는 메소드
 	public static SqlSessionFactory getSqlSession() {
-		
-		
 		return sqlSessionFactory;
 	}
 }

@@ -1,16 +1,4 @@
-<%@page import="com.sweathome.domain.tb_product"%>
-<%@page import="java.util.List"%>
-<%@page import="com.sweathome.domain.DAO"%>
-<%@page import="com.sweathome.domain.mb_user"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-	mb_user user = (mb_user)session.getAttribute("user_login");
-	DAO dao = new DAO();
-	
-	List<tb_product> PRODUCT = dao.product_page();
-%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +8,13 @@
 	<link rel="stylesheet" href="CSS/main.css">
 	<link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 	<script src="js/전자상거래.js"></script>
-	<link rel="stylesheet" href="/login.html">
+	<link rel="stylesheet" href="login.html">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready( function() {
 
-		$("#headers").load("header.jsp");  // 원하는 파일 경로를 삽입하면 된다
+		$("#headers").load("header.html");  // 원하는 파일 경로를 삽입하면 된다
 		$("#footers").load("footer1.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 
 });
@@ -47,16 +35,16 @@
 			<div class="slide-container">
 				<!-- 1번광고 -->
                 <div class="slide active">
-                    <img src="img/메인광고.jpg" alt="슬라이드 이미지 1">
+                    <img src="/img/메인광고.jpg" alt="슬라이드 이미지 1">
 				
                 </div>
                 <!-- 2번광고 -->
                 <div class="slide">
-                    <img src="img/메인광고2.jpg" alt="슬라이드 이미지 2">
+                    <img src="/img/메인광고2.jpg" alt="슬라이드 이미지 2">
                 </div>
                 <!-- 3번광고 -->
                 <div class="slide">
-                    <img src="img/메인광고3.jpg" alt="슬라이드 이미지 3">
+                    <img src="/img/메인광고3.jpg" alt="슬라이드 이미지 3">
                 </div>
                 
                 <div class="slide-controls">
@@ -70,16 +58,10 @@
     <section>
 		<div class="RDproduct">
 			<div class="shop-content">
-				<%if(user != null){ %>
-				<h1 style="padding-left: 2%;"><%=user.getUSER_MB_NAME()%>님을 위한 추천상품</h1>
-				<%}else{ %>
-				<h1 style="padding-left: 2%;">회원님을 위한 추천상품</h1>
-				<%} %>
-				
-				
+				<h1 style="padding-left: 2%;">ㅇㅇㅇ님을 위한 추천상품</h1>
 				<!-- 상품1 -->
 				<div class="product-box" >
-					<img src="/img/샐러드.jpg" alt="" class="product-img">
+					<img src="img/샐러드.jpg" alt="" class="product-img">
 					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
@@ -87,7 +69,7 @@
 	
 				<!-- 상품2 -->
 				<div class="product-box">
-					<img src="/img/오트밀.png" alt="" class="product-img">
+					<img src="img/오트밀.png" alt="" class="product-img">
 					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
@@ -95,7 +77,7 @@
 	
 				<!-- 상품3 -->
 				<div class="product-box">
-					<img src="/img/sel.jpg" alt="" class="product-img">
+					<img src="img/sel.jpg" alt="" class="product-img">
 					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
@@ -103,47 +85,41 @@
 	
 				<!-- 상품4 -->
 				<div class="product-box">
-					<img src="/img/닭가슴덮밥.jpg" alt="" class="product-img">
+					<img src="img/닭가슴덮밥.jpg" alt="" class="product-img">
 					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 				<hr color=" #fabfba" size="4px" width="97%"  >
-				
-				
-				
 				<!-- ............................................................................... -->
-				
-				
 				<h1 class="title2"style="padding-left: 2%;">신규상품</h1>
-				
 				<div class="product-box" >
-					<img src="<%=PRODUCT.get(26).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(26).getPROD_NAME()%></h2>
+					<img src="/img/닭가슴덮밥.jpg" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품2 -->
 				<div class="product-box">
-					<img src="<%=PRODUCT.get(28).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(28).getPROD_NAME()%></h2>
+					<img src="/img/닭가슴소시지.jpg" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품3 -->
 				<div class="product-box">
-					<img src="<%=PRODUCT.get(14).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(14).getPROD_NAME()%></h2>
+					<img src="/img/닭가슴스테이크.jpg" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품4 -->
 				<div class="product-box">
-					<img src="<%=PRODUCT.get(18).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(18).getPROD_NAME()%></h2>
+					<img src="/img/닭가슴슬라이드.jpg" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
@@ -152,32 +128,32 @@
 				<!-- ,.................................................................................... -->
 				<h1 class="title2"  style="padding-left: 2%;">인기상품</h1>
 				<div class="product-box" >
-					<img src="<%=PRODUCT.get(19).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(19).getPROD_NAME()%></h2>
+					<img src="/img/닭가슴스테이크.jpg" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품2 -->
 				<div class="product-box">
-					<img src="<%=PRODUCT.get(12).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(12).getPROD_NAME()%></h2>
+					<img src="/img/훈제연어.jpg" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품3 -->
 				<div class="product-box">
-					<img src="<%=PRODUCT.get(3).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(3).getPROD_NAME()%></h2>
+					<img src="/img/맛있겠다.png" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품4 -->
 				<div class="product-box">
-					<img src="<%=PRODUCT.get(11).getPROD_URL()%>" alt="" class="product-img">
-					<h2 class="product-title"><%=PRODUCT.get(11).getPROD_NAME()%></h2>
+					<img src="/img/햄버거.jpg" alt="" class="product-img">
+					<h2 class="product-title">제품이름</h2>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
@@ -210,7 +186,7 @@
 				</tr>
 				
 					<tr>
-						<td><input type="checkbox" name="food-select" value="food1"></td>
+						<td><input type="checkbox" name="food-select" id="food1"></td>
 						<td>닭가슴살</td>
 						<td>100g</td>
 						<td>150</td>
@@ -219,7 +195,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value="food2"></td>
+						<td><input type="checkbox" name="food-select" id="food2"></td>
 						<td>닭가슴살1</td>
 						<td>100g</td>
 						<td>150</td>
@@ -228,7 +204,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value="food3"></td>
+						<td><input type="checkbox" name="food-select" id="food3"></td>
 						<td>닭가슴살2</td>
 						<td>100g</td>
 						<td>150</td>
@@ -237,7 +213,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value="food4"></td>
+						<td><input type="checkbox" name="food-select" id="food4"></td>
 						<td>닭가슴살3</td>
 						<td>100g</td>
 						<td>150</td>
@@ -246,7 +222,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value="food5"></td>
+						<td><input type="checkbox" name="food-select" id="food5"></td>
 						<td>닭가슴살4</td>
 						<td>100g</td>
 						<td>150</td>
@@ -255,7 +231,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살5</td>
 						<td>100g</td>
 						<td>150</td>
@@ -264,7 +240,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살6</td>
 						<td>100g</td>
 						<td>150</td>
@@ -273,7 +249,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살7</td>
 						<td>100g</td>
 						<td>150</td>
@@ -282,7 +258,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살8</td>
 						<td>100g</td>
 						<td>150</td>
@@ -291,7 +267,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살9</td>
 						<td>100g</td>
 						<td>150</td>
@@ -300,7 +276,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살10</td>
 						<td>100g</td>
 						<td>150</td>
@@ -309,7 +285,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살11</td>
 						<td>100g</td>
 						<td>150</td>
@@ -318,7 +294,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살12</td>
 						<td>100g</td>
 						<td>150</td>
@@ -327,7 +303,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살13</td>
 						<td>100g</td>
 						<td>150</td>
@@ -336,7 +312,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>닭가슴살14</td>
 						<td>100g</td>
 						<td>150</td>
@@ -345,7 +321,7 @@
 						<td>50</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" name="food-select" value=""></td>
+						<td><input type="checkbox" name="food-select" id=""></td>
 						<td>발효곤약 짜장라면</td>
 						<td>100g</td>
 						<td>150</td>

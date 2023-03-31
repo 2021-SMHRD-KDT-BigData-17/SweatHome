@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>샵</title>
+    <link rel="stylesheet" href="/CSS/전자상거래.css">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready( function() {
+
+		$("#headers").load("/header.html");  // 원하는 파일 경로를 삽입하면 된다
+		$("#footers").load("/footer1.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+
+});
+	</script>
+</head>
+
+<body>
+    <div id="headers"></div>
+    <section>
+    <div class="webshop">
+        <div class="container">
+            <!-- <a href="#" class="logo">Ecommerce</a>
+            <i class='bx bx-shopping-bag' id="cart-icon"></i> -->
+            <div class="cart">
+                <div class="box" >
+                <h2 class="cart-title">장바구니</h2>
+                <div class="cart-content">
+
+                    <div class="cart-box">
+                        <img src="/img/sel.jpg" alt="" class="cart-img">
+                        <div class="detail-box">
+                            <div class="cart-product-title">제품이름</div>
+                            <div class="cart-price">5000₩</div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                        
+                      
+                        <!-- 카트 삭제 -->
+                        <i class='bx bxs-trash-alt cart-remove'></i>
+                    </div>
+                </div>
+                <!-- 칼로리 계산 -->
+                <div class="Calculate">
+                    
+                </div>
+                <!-- 전체 가격 -->
+                <div class="total">
+                    <ul class="Calculate_Count">
+                        <li>칼로리</li> <!-- 불러올 값 --> 
+                        <li>탄수화물</li>
+                        <li>단백질</li>
+                        <li>지방</li>
+                        <hr>
+                    <span class="total-title">Total</span>
+                    <span class="total price">0₩</span>
+                </div>
+                <!-- 구매 버튼 -->
+                <div>
+                <a href="주문서.html"><button type="button" class="btn-buy">Buy now</button></a>
+                </div>
+                <!-- 카트 닫기 -->
+                <!-- <i class='bx bx-x' id="close-cart"></i> -->
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="shop">
+        <h2 class="section-title">Diet Food</h2>
+        <div class="shop-content">
+            <!-- 상품1 -->
+            <div class="product-box">
+                <img src="/img/닭가슴살 도시락.jpg" alt="" class="product-img">
+                <h2 class="product-title">닭가슴살 도시락</h2>
+                <pre>Cal 탄 단 지</pre>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <!-- 상품2 -->
+            <div class="product-box">
+                <img src="/img/닭가슴살 샐러드.jpg" alt="" class="product-img">
+                <h2 class="product-title">닭가슴살 샐러드</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <!-- 상품3 -->
+            <div class="product-box">
+                <img src="/img/닭가슴살 소시지.jpg" alt="" class="product-img">
+                <h2 class="product-title">닭가슴살 소시지</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <!-- 상품4 -->
+            <div class="product-box">
+                <img src="/img/닭가슴살 스테이크.jpg" alt="" class="product-img">
+                <h2 class="product-title">닭가슴살 스테이크</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <!-- 상품5 -->
+            <div class="product-box">
+                <img src="/img/닭가슴살 칩.jpg" alt="" class="product-img">
+                <h2 class="product-title">닭가슴살 칩</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- 상품7 -->
+            <div class="product-box">
+                <img src="/img/닭가슴살 햄버거.jpg" alt="" class="product-img">
+                <h2 class="product-title">닭가슴살 햄버거</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <!-- 상품8 -->
+            <div class="product-box">
+                <img src="/img/닭가슴샇.jpg" alt="" class="product-img">
+                <h2 class="product-title">닭가슴살</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <div class="product-box">
+                <img src="/img/소고기 도시락.png" alt="" class="product-img">
+                <h2 class="product-title">소고기 도시락</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/아몬드.jpg" alt="" class="product-img">
+                <h2 class="product-title">아몬드</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/아보카도.jpg" alt="" class="product-img">
+                <h2 class="product-title">아보카도</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/연어도시락.jpg" alt="" class="product-img">
+                <h2 class="product-title">연어도시락</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/연어샐러드.jpg" alt="" class="product-img">
+                <h2 class="product-title">연어샐러드</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/치즈.jpg" alt="" class="product-img">
+                <h2 class="product-title">치즈</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/퀵오트밀.jpg" alt="" class="product-img">
+                <h2 class="product-title">퀵오트밀</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/통밀빵.jpg" alt="" class="product-img">
+                <h2 class="product-title">통밀빵</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/프로틴바.jpg" alt="" class="product-img">
+                <h2 class="product-title">프로틴바</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/현미밥.png" alt="" class="product-img">
+                <h2 class="product-title">현미밥</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="/img/훈제란.jpg" alt="" class="product-img">
+                <h2 class="product-title">훈제란</h2>
+                <span class="price">5000₩</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            
+
+        </div>
+    </section>
+    
+</div>
+<div class="gap"></div>
+<div id="footers"></div>
+<script src="/js/전자상거래.js"></script>
+</body>
+
+</html>

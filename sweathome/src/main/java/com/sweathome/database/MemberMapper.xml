@@ -79,9 +79,10 @@ VALUES
 		select prod_idx from TB_order where order_status = 0 and user_id=#{user_id}
 	</select>
 	
-	<select id="product_page" resultType="product_page">
-		select prod_name, prod_price from tb_product
+	<select id="product_page" resultType="com.sweathome.domain.tb_product">
+		select prod_name, prod_price, prod_url, carbohydrate, protein, fat, calories from tb_product
 	</select>
+
 	
 	<select id="prod_idx_select" parameterType="String" resultType="int">
 		select order_idx from TB_PRODUCT where prod_name = #{prod_name}

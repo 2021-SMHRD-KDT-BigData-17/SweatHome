@@ -45,6 +45,7 @@ body {
 
 h1{
     font-family: 'GmarketSansMedium';
+    font-size: xx-large;
 }
 h2{
     font-family: 'GmarketSansMedium';
@@ -175,6 +176,7 @@ article h2 {
     
     /* padding-right: 5%; */
 }
+
 :root {
     --main-color: blue;
     --text-color: black;
@@ -183,10 +185,11 @@ article h2 {
 }
 .product-box{
 position: relative;
-width: 50%;
-height: 450px;
+width: 25%;
+height: 220px;
 padding: 1%;
 float: left;
+margin-bottom: 40px;
 
 }
 .product-box:hover{
@@ -261,22 +264,34 @@ margin-bottom: 0.5rem;
     padding: 10px;
 }
 /* 칼로리검색기----------------------------------------------------------------------------------------------------------------------- */
-/* .Search{
-    padding-bottom: 200px;
-} */
+
 .food-list{
    float: left;
+   padding-left: 2%;
   /* padding-left:30% ;
   padding-right:10% ;
     border */
     /* height: 1000px; */
-    width: 50%;
+    width: 45%;
     overflow: auto;
-    height: 850px;
+    height: 300px;
+   /*  margin-bottom: 100px; */
+   	
 }
 .enter{
-    width: 50%;
+    width: 45%;
+    padding-left: 2%;
     float: left;
+    font-size:x-large;
+}
+/* .makebox{
+	boredr:3px solid #fabfba;
+	border-radius:20px;
+} */
+.pass-bt{
+    margin-top: 20px;
+   margin-left: 10%;
+    width: 20%;
 }
 .youtub{
     padding: 1.5%;
@@ -284,3 +299,37 @@ margin-bottom: 0.5rem;
 .youtub video{
     padding:1.5%
 }
+.title2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/* .Search input{
+    height: ;
+} */
+.my-nutrient{
+    margin-top: 50px;
+    float: left;
+    width: 45%;
+    padding-left: 2%;
+    
+}
+table{
+    text-align: center;
+}
+.select-food{
+    overflow: auto; 
+}
+.find{
+  
+   margin: 40%;
+   
+   padding: 5px;
+    background-color: #666;
+    text-align: center;
+
+}
+.select-food2{
+    height: 200px;
+    overflow: auto; 
+}
+

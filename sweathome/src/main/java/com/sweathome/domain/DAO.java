@@ -218,6 +218,11 @@ public class DAO {
 			}finally {
 				sqlSession.close();
 			}
+			if(product_page != null) {
+				System.out.println("값 불러오기 성공");
+			}else {
+				System.out.println("실패");
+			}
 			
 			return product_page;
 		}
@@ -239,7 +244,7 @@ public class DAO {
 //				sqlSession.close();
 //			} // finally 끝
 //			return cnt;
-//	}
+//	}3
 		
 		
 }

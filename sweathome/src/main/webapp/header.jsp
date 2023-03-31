@@ -53,7 +53,7 @@
                                                 <!-- <img src="/img/샵이동2.png" width="60px" height="50px" ><br> -->
                 
                 
-                <a href="전자상거래.jsp" class="goshop-text" id="moving-icon" >SHOP</a>
+                <a href="전자상거래.jsp" class="goshop-text" id="moving-icon" >탄단지 샵</a>
                 
                 
                  
@@ -64,7 +64,7 @@
 					<!-- </a> -->
                 <!-- </li> -->
                 <%} else {%>
-                <a href="Logoutcon" class="Join-text">LOGOUT</a>
+                <a href="Logoutcon" class="Join-text">로그아웃</a>
                 <a href="" class="Join-text" rel="modal:open">마이페이지</a>
                 
                 <%} %>

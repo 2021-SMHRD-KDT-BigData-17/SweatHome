@@ -11,6 +11,10 @@ public class tb_product {
 	private int CALORIES; //칼로리
 	private int PROD_PRICE; // 제품 가격
 	private int PROD_STOCK; // 제품 재고
+	private String PROD_URL; // 제품 이미지 링
+	
+	
+	
 	public int getPROD_IDX() {
 		return PROD_IDX;
 	}
@@ -65,8 +69,14 @@ public class tb_product {
 	public void setPROD_STOCK(int pROD_STOCK) {
 		PROD_STOCK = pROD_STOCK;
 	}
+	public String getPROD_URL() {
+		return PROD_URL;
+	}
+	public void setPROD_URL(String pROD_URL) {
+		PROD_URL = pROD_URL;
+	}
 	public tb_product(int pROD_IDX, String pROD_CODE, String pROD_NAME, int cARBOHYDRATE, int pROTEIN, int fAT,
-			int cALORIES, int pROD_PRICE, int pROD_STOCK) {
+			int cALORIES, int pROD_PRICE, int pROD_STOCK, String pROD_URL) {
 		super();
 		PROD_IDX = pROD_IDX;
 		PROD_CODE = pROD_CODE;
@@ -77,26 +87,26 @@ public class tb_product {
 		CALORIES = cALORIES;
 		PROD_PRICE = pROD_PRICE;
 		PROD_STOCK = pROD_STOCK;
+		PROD_URL = pROD_URL;
 	}
-	public tb_product(int pROD_IDX, String pROD_NAME, int cARBOHYDRATE, int pROTEIN, int fAT) {
+	public tb_product(String pROD_NAME, int cARBOHYDRATE, int pROTEIN, int fAT, int cALORIES, int pROD_PRICE,
+			String pROD_URL) {
 		super();
-		PROD_IDX = pROD_IDX;
 		PROD_NAME = pROD_NAME;
 		CARBOHYDRATE = cARBOHYDRATE;
 		PROTEIN = pROTEIN;
 		FAT = fAT;
+		CALORIES = cALORIES;
+		PROD_PRICE = pROD_PRICE;
+		PROD_URL = pROD_URL;
 	}
 	public tb_product() {
 		super();
 	}
-	public tb_product(String pROD_NAME, int pROD_PRICE) {
-		super();
-		PROD_NAME = pROD_NAME;
-		PROD_PRICE = pROD_PRICE;
-	}
 	
 	
 	
 	
+
 	
 }
