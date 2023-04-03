@@ -105,6 +105,7 @@ tr{
     
 }
 .head{
+    width: 200px;
     padding: 10px 16px;
     font-size: 14px;
     font-weight: 400;
@@ -182,7 +183,9 @@ td{
     font-size: 16px;
     border: 1px solid #f77870;
     display: inline-block;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    width: 354px;
+
     font-weight: normal;
     text-decoration: none;
     vertical-align: middle;
@@ -193,5 +196,6 @@ td{
     color: #000;
     background-color: #fff;
 }
+
 
 

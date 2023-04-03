@@ -1,3 +1,7 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.util.Random"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.Array"%>
 <%@page import="com.sweathome.domain.tb_nutritionfact"%>
 <%@page import="com.sweathome.domain.tb_product"%>
 <%@page import="java.util.List"%>
@@ -6,13 +10,126 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <%
+	// 로그인할 때 저장한 세션 가져오기
 	mb_user user = (mb_user)session.getAttribute("user_login");
-	DAO dao = new DAO();
-	List<tb_product> PRODUCT = dao.product_page();
 	
+	DAO dao = new DAO();
+	Random rd = new Random();
+	
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	
+	// 데이터베이스에 저장된 모든 상품 가져오기
+	List<tb_product> PRODUCT = dao.product_page();
+	// 데이터베이스에 저장된 영양소 가져오기
 	List<tb_nutritionfact> nutritionfacts = dao.nutritionfacts();
+	
+	
+	// 리스트에 각영양소 별 음식 담기	
+	List<tb_product> prod_calbohydrate = null;
+	List<tb_product> prod_protein = null;
+	List<tb_product> prod_fat = null;
+	List<tb_product> prod_allinone = dao.product_select_allinone();
+	
+
+	System.out.println(prod_allinone.size()); 
+	
+	d = rd.nextInt(prod_allinone.size());
+		// 탄수화물 - 단백질 - 지방 순으로 필요영양소에서 제품 영양소를 빼는 알고리즘
+		
+		// 1. 세션에 저장된 유저의 필요한 영양성분을 가져온다.
+	if(user != null){	
+		int USER_CARBOHYDRATE = user.getUSER_CARBOHYDRATE()/4;
+		int USER_PROTEIN = user.getUSER_PROTEIN()/4;
+		int USER_FAT = user.getUSER_FAT()/4;
+		int USER_CALORIES = user.getUSER_CALORIES()/4;
+		
+		// 1-1 3끼에 맞춰서 3등분하고 변수에 담는다.
+		int meal_carbohydrate = (USER_CARBOHYDRATE / 3);
+		int meal_protein = (USER_PROTEIN / 3);
+		int meal_fat = (USER_FAT / 3);
+		int meal_calories = (USER_CALORIES / 3);
+		
+		
+		
+		
+		// 필요 영양소와 비슷한 범위의 제품과 필요 영양소를 뺀다
+			prod_calbohydrate = dao.product_select_carbohydrate(meal_carbohydrate);
+			if(prod_calbohydrate.size()>0){
+			a = rd.nextInt(prod_calbohydrate.size());
+			}
+	if(prod_calbohydrate.size() != 0){
+		while(true) {
+			if(meal_carbohydrate < 10) {
+			break;
+			}else if(meal_protein < 5) {
+			break;
+			}else if(meal_fat < 2) {
+			break;
+			}
+			meal_carbohydrate = meal_carbohydrate - prod_calbohydrate.get(a).getCARBOHYDRATE();
+			meal_protein = meal_protein - prod_calbohydrate.get(a).getPROTEIN();
+			meal_fat = meal_fat - prod_calbohydrate.get(a).getFAT();
+			meal_calories = meal_calories - prod_calbohydrate.get(a).getCALORIES();
+			
+		}
+	}
+			
+		prod_protein = dao.product_select_protein(meal_protein);
+		
+		if(prod_protein.size()>0){
+		 b = rd.nextInt(prod_protein.size());
+		}
+		
+		if(prod_protein.size() != 0){
+		while(true) {
+			
+			meal_carbohydrate = meal_carbohydrate - prod_protein.get(b).getCARBOHYDRATE();
+			meal_protein = meal_protein - prod_protein.get(b).getPROTEIN();
+			meal_fat = meal_fat - prod_protein.get(b).getFAT();
+			meal_calories = meal_calories - prod_protein.get(b).getCALORIES();
+			if(meal_carbohydrate < 10) {
+			break;
+			}else if(meal_protein < 7) {
+			break;
+			}else if(meal_fat < 5) {
+			break;
+			}
+			}
+		}	
+		prod_fat = dao.product_select_fat(meal_fat);
+		
+		if(prod_fat.size()>0){
+		 c = rd.nextInt(prod_fat.size());
+		}
+	if(prod_fat.size() != 0){
+		while(true) {
+			meal_carbohydrate = meal_carbohydrate - prod_fat.get(c).getCARBOHYDRATE();
+			meal_protein = meal_protein - prod_fat.get(c).getPROTEIN();
+			meal_fat = meal_fat - prod_fat.get(c).getFAT();
+			meal_calories = meal_calories - prod_fat.get(c).getCALORIES();
+			if(meal_carbohydrate < 10) {
+			break;
+			}else if(meal_protein < 7) {
+			break;
+			}else if(meal_fat < 5) {
+			break;
+			}
+			}
+		}
+	System.out.println(prod_calbohydrate.size()); 
+	System.out.println(prod_protein.size()); 
+	System.out.println(prod_fat.size()); 
+	}
+		
 %>
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -80,32 +197,52 @@
 				
 				<!-- 상품1 -->
 				<div class="product-box" >
-					<img src="/img/샐러드.jpg" alt="" class="product-img">
-					<h2 class="product-title">제품이름</h2>
+				<% if(user != null && prod_calbohydrate.size()!=0){ %>
+					<img src="<%=prod_calbohydrate.get(a).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=prod_calbohydrate.get(a).getPROD_NAME()%></h2>
+					<%}else{ %>
+					<img src="<%=PRODUCT.get(1).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=PRODUCT.get(1).getPROD_NAME()%></h2>
+					<%} %>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품2 -->
-				<div class="product-box">
-					<img src="/img/오트밀.png" alt="" class="product-img">
-					<h2 class="product-title">제품이름</h2>
+				<div class="product-box" >
+				<% if(user != null && prod_protein.size()!=0){ %>
+					<img src="<%=prod_protein.get(b).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=prod_protein.get(b).getPROD_NAME()%></h2>
+					<%}else{ %>
+					<img src="<%=PRODUCT.get(5).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=PRODUCT.get(5).getPROD_NAME()%></h2>
+					<%} %>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품3 -->
 				<div class="product-box">
-					<img src="/img/sel.jpg" alt="" class="product-img">
-					<h2 class="product-title">제품이름</h2>
+					<% if(user != null && prod_fat.size()!=0){ %>
+					<img src="<%=prod_fat.get(c).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=prod_fat.get(c).getPROD_NAME()%></h2>
+					<%}else{ %>
+					<img src="<%=PRODUCT.get(8).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=PRODUCT.get(8).getPROD_NAME()%></h2>
+					<%} %>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>
 	
 				<!-- 상품4 -->
-				<div class="product-box">
-					<img src="/img/닭가슴덮밥.jpg" alt="" class="product-img">
-					<h2 class="product-title">제품이름</h2>
+			<div class="product-box">	
+				<% if(user != null && prod_allinone.size()!=0){ %>
+					<img src="<%=prod_allinone.get(d).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=prod_allinone.get(d).getPROD_NAME()%></h2>
+					<%}else{ %>
+					<img src="<%=PRODUCT.get(13).getPROD_URL()%>" alt="" class="product-img">
+					<h2 class="product-title"><%=PRODUCT.get(13).getPROD_NAME()%></h2>
+					<%} %>
 					<!-- <span class="price">5000₩</span> -->
 					<!-- <i class='bx bx-shopping-bag add-cart'></i> -->
 				</div>

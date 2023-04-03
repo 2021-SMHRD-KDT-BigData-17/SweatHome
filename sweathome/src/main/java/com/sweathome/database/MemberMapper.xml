@@ -72,15 +72,19 @@ VALUES
 	</select>
 	
 	<select id="product_select_carbohydrate" parameterType="int" resultType="com.sweathome.domain.tb_product">
-		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{carbohydrate}-20 AND #{carbohydrate}+20
+		select prod_name, carbohydrate, protein, fat, calories, prod_url from TB_PRODUCT where (CARBOHYDRATE BETWEEN #{carbohydrate}*0.8 AND #{carbohydrate}*1.2) and prod_code = 101
 	</select>
 	<select id="product_select_protein" parameterType="int" resultType="com.sweathome.domain.tb_product">
-		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{protein}-15 AND #{carbohydrate}+15
+		select prod_name, carbohydrate, protein, fat, calories, prod_url from TB_PRODUCT where (PROTEIN BETWEEN #{protein}*0.4 AND #{protein}) and (prod_code = 201 or prod_code = 501) 
 	</select>
 	<select id="product_select_fat" parameterType="int" resultType="com.sweathome.domain.tb_product">
-		select prod_idx, prod_name, carbohydrate, protein, fat from TB_PRODUCT where CARBOHYDRATE BETWEEN #{fat}-10 AND #{fat}+10
+		select prod_name, carbohydrate, protein, fat, calories, prod_url from TB_PRODUCT where prod_code = 301
 	</select>
 	
+	<select id="product_select_allinone" resultType="com.sweathome.domain.tb_product">
+		select prod_name, carbohydrate, protein, fat, calories, prod_url from TB_PRODUCT where prod_code = 401
+	</select>
+		
 	<select id="order_index selectAll" parameterType="String" resultType="List">
 		select prod_idx from TB_order where order_status = 0 and user_id=#{user_id}
 	</select>
@@ -114,11 +118,8 @@ VALUES
     user_carbohydrate = #{USER_CARBOHYDRATE}, 
     user_protein = #{USER_PROTEIN}, 
     user_fat = #{USER_FAT}, 
-    user_moment_calories = #{USER_MOMENT_CALORIES}, 
-    user_accu_point = #{USER_ACCU_POINT}, 
-    user_point = USER_{POINT}, 
-    user_joindate = USER_{JOINDATE}, 
-    where USER_ID=#{USER_ID} AND USER_PW=#{USER_PW}
+    user_moment_calories = #{USER_MOMENT_CALORIES}
+    where USER_ID=#{USER_ID}
 	</update>
 	
 	<insert id="order_insert" parameterType="com.sweathome.domain.tb_order">

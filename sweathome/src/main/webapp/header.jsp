@@ -59,13 +59,13 @@
                  
                 <% if(user == null) { %>
                 
-                <a href="login.html" class="login-text" rel="modal:open">LOGIN</a> 
-                <a href="회원가입2.html" class="Join-text" rel="modal:open">JOIN US</a>
+                <a href="login.html" class="login-text" rel="modal:open">로그인</a> 
+                <a href="회원가입2.html" class="Join-text" rel="modal:open">회원가입</a>
 					<!-- </a> -->
                 <!-- </li> -->
                 <%} else {%>
                 <a href="Logoutcon" class="Join-text">로그아웃</a>
-                <a href="" class="Join-text" rel="modal:open">마이페이지</a>
+                <a href="mypage.jsp" class="Join-text" >마이페이지</a>
                 
                 <%} %>
                 

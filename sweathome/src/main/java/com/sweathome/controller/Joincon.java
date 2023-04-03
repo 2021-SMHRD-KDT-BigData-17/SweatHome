@@ -31,7 +31,7 @@ public class Joincon extends HttpServlet {
 	int USER_AGE = Integer.parseInt(request.getParameter("user_age")); // 유저 나이
 	int USER_GENDER = Integer.parseInt(request.getParameter("user_gender")); // 유저 성별 (남자:0, 여자:1)
 	int USER_WEIGHT = Integer.parseInt(request.getParameter("user_weight")); // 유저 몸무게
-	int USER_PURPOSE = Integer.parseInt(request.getParameter("user_purpose")); // 유저 운동목적 (다이어트:0, 유지 : 1 벌크업: 2)
+	int USER_PURPOSE = Integer.parseInt(request.getParameter("user_purpose")); // 유저 운동목적 (다이어트:0, 벌크업 : 1 유지: 2)
 	int USER_MOMENT = Integer.parseInt(request.getParameter("user_moment")); // 유저 활동량 (매우적음:0, 적음:1, 보통:2, 많음:3, 매우 많음:4)
 	int USER_DIET_DAY = Integer.parseInt(request.getParameter("user_diet_day")); // 유저 다이어트기간(달)
 	
@@ -70,10 +70,10 @@ public class Joincon extends HttpServlet {
 	
 		switch(USER_PURPOSE) {
 			case 0:
-				USER_CALORIES = USER_MOMENT_CALORIES-750;
+				USER_CALORIES = USER_MOMENT_CALORIES-650;
 				break;
 			case 1:
-				USER_CALORIES = USER_MOMENT_CALORIES+500;
+				USER_CALORIES = USER_MOMENT_CALORIES+300;
 				break;
 			case 2:
 				USER_CALORIES = USER_MOMENT_CALORIES;
@@ -89,6 +89,9 @@ public class Joincon extends HttpServlet {
 			case 1:
 				USER_CARBOHYDRATE = (int)(USER_CALORIES*0.6);
 				break;
+			case 2:
+				USER_CARBOHYDRATE = (int)(USER_CALORIES*0.5);
+				break;
 }
 	
 	
@@ -98,6 +101,9 @@ public class Joincon extends HttpServlet {
 		break;
 	case 1:
 		USER_PROTEIN = (int)(USER_CALORIES*0.3);
+		break;
+	case 2:
+		USER_PROTEIN = (int)(USER_CALORIES*0.2);
 		break;
 }
 	
@@ -109,7 +115,12 @@ public class Joincon extends HttpServlet {
 	case 1:
 		USER_FAT = (int)(USER_CALORIES*0.1);
 		break;
+	case 2:
+		USER_FAT = (int)(USER_CALORIES*0.2);
+		break;
 }	
+	
+	
 	int USER_ACCU_POINT = 0; // 유저 누적 포인트
 	int USER_POINT = 0; // 유저 보유 포인트
 	//String USER_JOINDATE = request.getParameter("user_joindate");// 유저 가입일자

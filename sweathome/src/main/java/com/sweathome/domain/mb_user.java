@@ -10,7 +10,7 @@ public class mb_user {
 	private int USER_AGE; // 유저 나이
 	private int USER_GENDER; // 유저 성별 (남자:0, 여자:1)
 	private int USER_WEIGHT; // 유저 몸무게
-	private int USER_PURPOSE; // 유저 운동목적 (다이어트:0, 벌크업:1)
+	private int USER_PURPOSE; // 유저 운동목적 (다이어트:0, 벌크업:1 유지:2)
 	private int USER_MOMENT; // 유저 활동량 (매우적음:0, 적음:1, 보통:2, 많음:3, 매우 많음:4)
 	private int USER_DIET_DAY; // 유저 다이어트기간(달)
 	private int USER_MOMENT_CALORIES; // 유저 활동 칼로리
@@ -69,7 +69,7 @@ public class mb_user {
 	public int getUSER_GENDER() {
 		return USER_GENDER;
 	}
-	public void setUSER_GENDER(char uSER_GENDER) {
+	public void setUSER_GENDER(int uSER_GENDER) {
 		USER_GENDER = uSER_GENDER;
 	}
 	public int getUSER_WEIGHT() {
@@ -81,13 +81,13 @@ public class mb_user {
 	public int getUSER_PURPOSE() {
 		return USER_PURPOSE;
 	}
-	public void setUSER_PURPOSE(char uSER_PURPOSE) {
+	public void setUSER_PURPOSE(int uSER_PURPOSE) {
 		USER_PURPOSE = uSER_PURPOSE;
 	}
 	public int getUSER_MOMENT() {
 		return USER_MOMENT;
 	}
-	public void setUSER_MOMENT(char uSER_MOMENT) {
+	public void setUSER_MOMENT(int uSER_MOMENT) {
 		USER_MOMENT = uSER_MOMENT;
 	}
 	public int getUSER_DIET_DAY() {

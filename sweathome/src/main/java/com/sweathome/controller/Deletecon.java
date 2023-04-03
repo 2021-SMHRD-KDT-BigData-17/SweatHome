@@ -20,9 +20,11 @@ public class Deletecon extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
+		mb_user user_login =  (mb_user) session.getAttribute("user_login");
+		
 		DAO dao = new DAO();
 		
-		String USER_ID = request.getParameter("user_id");
+		String USER_ID = 
 		String USER_PW = request.getParameter("user_pw");
 		
 		mb_user user = new mb_user(USER_ID, USER_PW);
@@ -32,10 +34,10 @@ public class Deletecon extends HttpServlet {
 		if (cnt>0) {
 			// 삭제 성공하면 세션도 같이 지우고 메인페이지로 이동
 			session.removeAttribute("user_login");
-			response.sendRedirect("");
+			response.sendRedirect("main1.jsp");
 		}else {
 			// 삭제 실패했으므로 다시 마이페이지로 이동
-			response.sendRedirect("");
+			response.sendRedirect("mypage.jsp");
 		}
 	}
 

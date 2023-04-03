@@ -42,8 +42,9 @@ public class Logincon extends HttpServlet {
 		// 로그인을 성공했든 안했든 main.jsp 이동하기 때문에 한 번만 작성
 		mb_user user = (mb_user) session.getAttribute("user_login");
 		
-		System.out.println(user.getUSER_AGE());
-		System.out.println(user.getUSER_HEIGHT());
+		System.out.println(user.getUSER_MOMENT());
+		System.out.println(user.getUSER_PURPOSE());
+		System.out.println(user.getUSER_GENDER());
 	}
 
 }

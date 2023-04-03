@@ -96,7 +96,6 @@ public class DAO {
 			}catch(Exception e){
 				e.printStackTrace();
 			}finally {
-				sqlSession.close();
 			}
 			return algorithm_product;
 		}
@@ -109,7 +108,6 @@ public class DAO {
 			}catch(Exception e){
 				e.printStackTrace();
 			}finally {
-				sqlSession.close();
 			}
 			return algorithm_product;
 		}
@@ -122,7 +120,18 @@ public class DAO {
 			}catch(Exception e){
 				e.printStackTrace();
 			}finally {
-				sqlSession.close();
+			}
+			return algorithm_product;
+		}
+		
+		public List<tb_product> product_select_allinone() {
+			List<tb_product> algorithm_product = null;
+			
+			try {
+				algorithm_product = sqlSession.selectList("product_select_allinone");
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
 			}
 			return algorithm_product;
 		}

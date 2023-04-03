@@ -15,6 +15,14 @@ public class tb_product {
 	
 	
 	
+	public tb_product(String pROD_NAME, int cARBOHYDRATE, int pROTEIN, int fAT, int cALORIES) {
+		super();
+		PROD_NAME = pROD_NAME;
+		CARBOHYDRATE = cARBOHYDRATE;
+		PROTEIN = pROTEIN;
+		FAT = fAT;
+		CALORIES = cALORIES;
+	}
 	public int getPROD_IDX() {
 		return PROD_IDX;
 	}

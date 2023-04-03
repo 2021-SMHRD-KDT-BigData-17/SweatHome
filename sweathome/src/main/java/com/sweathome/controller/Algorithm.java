@@ -30,17 +30,23 @@ public class Algorithm extends HttpServlet {
 		int USER_CARBOHYDRATE = user.getUSER_CARBOHYDRATE();
 		int USER_PROTEIN = user.getUSER_PROTEIN();
 		int USER_FAT = user.getUSER_FAT();
+		int USER_CALORIES = user.getUSER_CALORIES();
 		
 		// 1-1 3끼에 맞춰서 3등분하고 변수에 담는다.
 		int meal_carbohydrate = (USER_CARBOHYDRATE / 3);
 		int meal_protein = (USER_PROTEIN / 3);
 		int meal_fat = (USER_FAT / 3);
+		int meal_calories = (USER_CALORIES / 3);
+		
+		int i = 0;
 		
 		ArrayList<String> name = new ArrayList<>();
+		
+		
+		
 		List<tb_product> prod_calbodrate = dao.product_select_carbohydrate(meal_carbohydrate);
 		
 		
-		int i = 0;
 		while(true) {
 			
 			meal_carbohydrate = meal_carbohydrate - prod_calbodrate.get(i).getCARBOHYDRATE();
