@@ -1,6 +1,8 @@
 package com.sweathome.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.sweathome.domain.DAO;
 import com.sweathome.domain.mb_user;
+import com.sweathome.domain.tb_order;
 
 public class Logincon extends HttpServlet {
 
@@ -16,15 +19,13 @@ public class Logincon extends HttpServlet {
 	
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		
 		String USER_ID = request.getParameter("id");
 		String USER_PW = request.getParameter("password");
-		
 		DAO dao = new DAO();
-		
 		mb_user login = new mb_user(USER_ID, USER_PW);
-		
 		mb_user user_login = dao.user_select(login);
+		
+		
 		
 		if(user_login != null) {
 			// 로그인 성공
@@ -42,9 +43,20 @@ public class Logincon extends HttpServlet {
 		// 로그인을 성공했든 안했든 main.jsp 이동하기 때문에 한 번만 작성
 		mb_user user = (mb_user) session.getAttribute("user_login");
 		
-		System.out.println(user.getUSER_MOMENT());
-		System.out.println(user.getUSER_PURPOSE());
-		System.out.println(user.getUSER_GENDER());
+		String USER_ID1 = user.getUSER_ID(); // 세션에 저장되어 있는 유저 아이디
+		
+		List<tb_order> order = dao.order_select(USER_ID1);
+		
+		session.setAttribute("order", order);
+		
+		if(order != null) {
+			System.out.println("주문내역 조회 성공");
+		}else {
+			System.out.println("주문내역 조회 실패");
+		}
+		
+		
+		
 	}
 
 }

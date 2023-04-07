@@ -47,9 +47,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my page</title>
     <link rel="stylesheet" href="CSS/mypage.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript">
+   
+      $(document).ready( function() {
+
+      $("#headers").load("header.jsp");  // 원하는 파일 경로를 삽입하면 된다
+      $("#footers").load("footer1.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+
+});
+   </script>
+    
 </head>
 <!-- 이름 전화번호 아이디 나이 성별 키 몸무게 운동목적 -->
 <body>
+<div id='headers'></div>
     <div class="path"></div>
     <div id="container">
         <div id="contents">
@@ -190,6 +203,12 @@
                     </table>
                 </div>
                 <div class="base-button">
+                	<a href="주문정보조회.jsp">
+                    	<section class="order-button">
+                    		<input type="submit" value="주문조회" class="btn">
+                    	</section>
+                    </a>
+                    <span>&nbsp;&nbsp;</span>
                     <form action="회원정보수정.jsp">
                         <section class="select-button">
                         <input type="submit" value="회원정보수정" class="btn">
@@ -198,7 +217,8 @@
                     </section>
                     <!-- 비밀번호만 입력하는 팝업창으로 갈 수 있게 -->
                     <span>&nbsp;&nbsp;</span>
-                    <form action="">
+                    
+                    <form action="회원탈퇴.html">
                         <section class="out-button">
                             <input type="submit" value="회원탈퇴" class="btn">
                         </section> 
@@ -207,6 +227,7 @@
             </div>
         </div>
     </div>
+    <div id='footers'></div>
 </body>
 
 </html>

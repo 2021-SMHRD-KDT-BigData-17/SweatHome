@@ -292,6 +292,13 @@ margin-bottom: 0.5rem;
     margin-top: 20px;
    margin-left: 10%;
     width: 20%;
+    border:3px solid #f77870;
+    border-radius: 40px ;
+    background-color: #fabfba;
+    font-size: 14px;
+    padding: 10px 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 .youtub{
     padding: 1.5%;
@@ -316,20 +323,53 @@ margin-bottom: 0.5rem;
 table{
     text-align: center;
 }
+ifream
 .select-food{
     overflow: auto; 
 }
 .find{
   
-   margin: 40%;
-   
-   padding: 5px;
-    background-color: #666;
+ display: block;
+    margin: 20px auto;
+    max-width: 120px;
+    text-decoration: none;
+    border:3px solid #f77870;
+    border-radius: 40px ;
+    padding: 10px 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #fabfba;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
     text-align: center;
-
 }
 .select-food2{
     height: 200px;
     overflow: auto; 
+}
+.searchButton{
+   /*  display: block; */
+     margin: 20px auto; 
+    max-width: 120px;
+    /* text-decoration: none; */
+    border:3px solid #f77870;
+    border-radius: 40px ;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #fabfba;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+#searchWord{
+   height: 30px;
+    border-radius: 5px ;
 }
 

@@ -64,7 +64,7 @@
 					<!-- </a> -->
                 <!-- </li> -->
                 <%} else {%>
-                <a href="Logoutcon" class="Join-text">로그아웃</a>
+                <a href="Logoutcon" class="login-text">로그아웃</a>
                 <a href="mypage.jsp" class="Join-text" >마이페이지</a>
                 
                 <%} %>

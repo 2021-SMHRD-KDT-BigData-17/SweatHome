@@ -15,16 +15,25 @@ import com.sweathome.domain.tb_order;
 
 public class Orderdetailcon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	request.setCharacterEncoding("UTF-8");
+	
 	HttpSession session = request.getSession();
+	mb_user user_detail = (mb_user) session.getAttribute("user_login");
+	
 	DAO dao = new DAO();
 	
-	mb_user user_detail = (mb_user) session.getAttribute("user_login");
-	String user_id = user_detail.getUSER_ID(); // 세션에 저장되어 있는 유저 아이디
-	List<Integer> ORDER_IDX = dao.order_idx_selectAll(user_id);// 주문상태(0) and 유저 아이디
-	String prod_name = request.getParameter("prod_name"); // 상품 이름
-	int PROD_IDX = dao.prod_idx_select(prod_name);// 상품 이름 웨얼절 써서 가져오기
+	String USER_ID = user_detail.getUSER_ID(); // 세션에 저장되어 있는 유저 아이디
 	
-	int OD_CNT = Integer.parseInt(request.getParameter("od_cnt"));
+	List<tb_order> order = dao.order_select(USER_ID);
+	
+	session.setAttribute("order", order);
+	
+	if(order != null) {
+		System.out.println("주문내역 조회 성공");
+	}else {
+		System.out.println("주문내역 조회 실패");
+	}
 	
 //	session.setAttribute("", OD_CNT);
 	

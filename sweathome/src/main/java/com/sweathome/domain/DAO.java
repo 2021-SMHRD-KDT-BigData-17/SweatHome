@@ -39,7 +39,6 @@ public class DAO {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}finally {
-				sqlSession.close();
 			} // finally 끝
 			
 			return loginMember;
@@ -227,9 +226,7 @@ public class DAO {
 			}finally {
 			}
 			if(product_page != null) {
-				System.out.println("값 불러오기 성공");
 			}else {
-				System.out.println("실패");
 			}
 			
 			return product_page;
@@ -245,12 +242,60 @@ public class DAO {
 			}finally {
 			}
 			if(nutritionfacts != null) {
-				System.out.println("값 불러오기 성공");
 			}else {
-				System.out.println("실패");
 			}
 			
 			return nutritionfacts;
+		}
+		
+		public List<tb_nutritionfact> nutri_search(String keyword){
+			List<tb_nutritionfact> nutri_search = null;
+			
+			try {
+				nutri_search = sqlSession.selectList("nutri_search", keyword);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+			}
+			if(nutri_search != null) {
+				System.out.println("서치 성공");
+			}else {
+				System.out.println("서치 실패");
+			}
+			
+			return nutri_search;
+		}
+		
+		
+		public tb_product product_name_select(String PROD_NAME) {
+			tb_product product_page = null;
+			
+			try {
+				product_page = sqlSession.selectOne("product_name_select", PROD_NAME);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+			}
+			if(product_page != null) {
+			}else {
+			}
+			
+			return product_page;
+		}
+		
+		public List<tb_order> order_select(String user_id) {
+			List<tb_order> product_page = null;
+			
+			try {
+				product_page = sqlSession.selectList("order_select", user_id);
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally {
+			}
+			if(product_page != null) {
+			}else {
+			}
+			return product_page;
 		}
 		
 //		public int product_stock_minus() {

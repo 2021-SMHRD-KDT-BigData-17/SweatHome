@@ -1,0 +1,122 @@
+
+#infoSelf{
+    height: 30px;
+    text-align: right;
+}
+.container hr{
+    margin-bottom: 10px;
+    border: 1px dashed;
+    
+}
+
+#layout{
+    
+    height: 100px;
+    width: 800px;
+    margin: auto;
+}
+.container .jumunpto{
+    width:100px;
+    height:100px;
+    /* margin-left: 250px; */
+}
+
+.container>h1{
+    text-align: center;
+    background-color: #fabfba;
+    margin-top: 20px;
+    border-radius: 20px;
+    
+    
+}
+h3 {
+    text-align: center;
+}
+.container {
+    width:600px;
+    margin:0 auto;
+}
+.fff-box { /* 순서없는 목록에 적용할 스타일 */
+    list-style-type: none; /* 불릿 없앰 */
+}
+
+
+
+div.centered { /* class=centered인 div에 적용할 스타일 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+fieldset { /* 필드셋에 적용할 스타일*/
+    margin: 15px 10px; /* 상하 마진 15xp, 좌우 마진 10px */
+}
+
+    fieldset legend { /* 필드셋의 제목 */
+        font-weight: bold; /* 굵은 글자 */
+        font-size: 18px; /* 글자 크기 18px */
+        color: black; /* 글자색 자주 */
+    }
+
+.f-box{
+    position: relative;
+    display: table;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.f-box .center{
+    position: absolute;
+    top:40%;
+    left: 120px;
+}
+.f-box .num{
+    position: absolute;
+    top: 40%;
+    right: 6%;
+}
+.f-box .pay{
+  position: absolute;
+  right: 6%;
+  top:70%;
+    
+    
+}
+
+.centered .button{
+  
+    display: block;
+    margin: 20px auto;
+    max-width: 120px;
+    text-decoration: none;
+    border:3px solid #f77870;
+    border-radius: 40px ;
+    padding: 10px 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #fabfba;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+fieldset{
+    position: relative;
+    background-color: rgb(252, 217, 214);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left:50px;
+    padding-right: 50px;
+}
+
+tr{
+    height: 40px;
+}
+/* fieldset>li{
+    margin: 20px;
+}
+
+
+fieldset>li>textarea{
+    margin-left: 20%;
+}
+ */
+ .adrs>tr>td{
+    bottom: 20px;
+ }

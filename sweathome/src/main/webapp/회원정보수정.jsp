@@ -1,10 +1,14 @@
+<%@page import="com.sweathome.domain.mb_user"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <%
-	session.getAttribute("user_login");
+	mb_user user = (mb_user)session.getAttribute("user_login");
 %>
+
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +16,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my page</title>
     <link rel="stylesheet" href="CSS/회원정보수정.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript">
+   
+      $(document).ready( function() {
+
+      $("#headers").load("header.jsp");  // 원하는 파일 경로를 삽입하면 된다
+      $("#footers").load("footer1.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+
+});
+   </script>
+    
 </head>
 
 <body>
+<div id='headers'></div>
 	<form action="updatecon">
     <div class="area"></div>
     <div class="titleArea">
@@ -43,8 +60,8 @@
                         </th>
 
                         <td>
-                            <input id="member_id" class="input" type="text" name="user_id">
-                            <span class="txtInfo">(영문소문자/숫자 포함)</span>
+                            <%=user.getUSER_ID() %>
+                            
                         </td>
                     </tr>
                     <tr class="content">
@@ -166,12 +183,13 @@
         <div class="base-button">
             <input type="submit" value="회원정보수정" class="btn">
             <span>&nbsp;&nbsp;</span>
-        	<a herf="main.jsp" class="btn">취소</a>
+        	<a href="mypage.jsp" class="btn">취소</a>
         </div>
     </div>
     </div>
     </div>
     </form>
+    <div id='footers'></div>
 </body>
 
 </html>

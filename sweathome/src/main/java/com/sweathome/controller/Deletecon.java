@@ -24,7 +24,7 @@ public class Deletecon extends HttpServlet {
 		
 		DAO dao = new DAO();
 		
-		String USER_ID = 
+		String USER_ID = user_login.getUSER_ID();
 		String USER_PW = request.getParameter("user_pw");
 		
 		mb_user user = new mb_user(USER_ID, USER_PW);
@@ -34,7 +34,7 @@ public class Deletecon extends HttpServlet {
 		if (cnt>0) {
 			// 삭제 성공하면 세션도 같이 지우고 메인페이지로 이동
 			session.removeAttribute("user_login");
-			response.sendRedirect("main1.jsp");
+			response.sendRedirect("main.jsp");
 		}else {
 			// 삭제 실패했으므로 다시 마이페이지로 이동
 			response.sendRedirect("mypage.jsp");

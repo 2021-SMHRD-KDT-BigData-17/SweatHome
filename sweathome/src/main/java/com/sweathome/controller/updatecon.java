@@ -91,6 +91,9 @@ public class updatecon extends HttpServlet {
 				case 1:
 					USER_CARBOHYDRATE = (int)(USER_CALORIES*0.6);
 					break;
+				case 2:
+					USER_CARBOHYDRATE = (int)(USER_CALORIES*0.4);
+					break;
 	}
 		
 		
@@ -101,6 +104,9 @@ public class updatecon extends HttpServlet {
 		case 1:
 			USER_PROTEIN = (int)(USER_CALORIES*0.3);
 			break;
+		case 2:
+			USER_PROTEIN = (int)(USER_CALORIES*0.4);
+			break;
 	}
 		
 		
@@ -110,6 +116,9 @@ public class updatecon extends HttpServlet {
 			break;
 		case 1:
 			USER_FAT = (int)(USER_CALORIES*0.1);
+			break;
+		case 2:
+			USER_FAT = (int)(USER_CALORIES*0.2);
 			break;
 	}	
 		

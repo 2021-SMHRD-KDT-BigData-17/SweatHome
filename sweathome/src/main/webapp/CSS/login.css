@@ -11,15 +11,16 @@ section{
     min-height: auto;
     width: 100%;
     background: white;
+    border-radius: 30px;
 }
 .box{
     position: relative;
     width: 400px;
     height: 450px;
     background: transparent;
-    border: 2px solid #BBDEFB;
+    
     border-radius: 30px;
-    background-color: #E3F2FD;
+    background-color:  #fabfba ;
     backdrop-filter: blur(15px);
     display: flex;
     justify-content: center;
@@ -59,7 +60,7 @@ top: -5px;
     border: none;
     outline: none;
     font-size: 1em;
-    padding: 0 35px 0 5px;
+    /* padding: 0 35px 0 5px; */
     color: black;
 }
 .inputbox ion-icon{
@@ -113,5 +114,11 @@ button{
     text-decoration: underline;
    
 }
-
+.modal{
+    padding:10px;
+    width: auto;
+   background-color:  #fabfba ;
+   border-radius: 30px;
+   border: 2px solid #f77870;
+}
 

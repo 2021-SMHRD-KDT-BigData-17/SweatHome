@@ -18,15 +18,15 @@ List<tb_product> PRODUCT = dao.product_page();
     <link rel="stylesheet" href="CSS/전자상거래.css">
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready( function() {
+   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script type="text/javascript">
+      $(document).ready( function() {
 
-		$("#headers").load("header.html");  // 원하는 파일 경로를 삽입하면 된다
-		$("#footers").load("footer1.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+      $("#headers").load("header.jsp");  // 원하는 파일 경로를 삽입하면 된다
+      $("#footers").load("footer1.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 
 });
-	</script>
+   </script>
 </head>
 
 <body>
@@ -39,19 +39,19 @@ List<tb_product> PRODUCT = dao.product_page();
             <div class="cart">
                 <div class="box" >
                 <h2 class="cart-title">장바구니</h2>
+                <hr color=" #fabfba" size="4px" width="50%"  >
                 <div class="cart-content">
-
                     <div class="cart-box">
-                        <img src="img/sel.jpg" alt="" class="cart-img">
+                        <!-- <img src="" alt="" class="cart-img"> -->
                         <div class="detail-box">
-                            <div class="cart-product-title">제품이름</div>
-                            <div class="cart-price">5000₩</div>
-                            <input type="number" value="1" class="cart-quantity">
+                            <!-- <div class="cart-product-title"></div>
+                            <div class="cart-price"></div>
+                            <input type="number" value="1" class="cart-quantity"> -->
                         </div>
                         
                       
                         <!-- 카트 삭제 -->
-                        <i class='bx bxs-trash-alt cart-remove'></i>
+                        <!-- <i class='bx bxs-trash-alt cart-remove'></i> -->
                     </div>
                 </div>
                 <!-- 칼로리 계산 -->
@@ -61,18 +61,19 @@ List<tb_product> PRODUCT = dao.product_page();
                 <!-- 전체 가격 -->
                 <div class="total">
                     <ul class="Calculate_Count">
-                        <li>칼로리</li> <!-- 불러올 값 --> 
+                      <!--   <li>칼로리</li> 불러올 값 
                         <li>탄수화물</li>
                         <li>단백질</li>
                         <li>지방</li>
                         <hr>
                     <span class="total-title">Total</span>
-                    <span class="total price">0₩</span>
+                    <span class="total price">0₩</span> -->
                 </div>
                 <!-- 구매 버튼 -->
-                <div>
-                <a href="주문서.html"><button type="button" class="btn-buy">Buy now</button></a>
-                </div>
+              
+                <!-- <a href="주문서.html" > !-->
+                <a href="주문서.jsp"><button type="button" class="btn-buy" onclick="search()">Buy now</button></a>
+                <!--  </a> -->
                 <!-- 카트 닫기 -->
                 <!-- <i class='bx bx-x' id="close-cart"></i> -->
             </div>
@@ -103,6 +104,41 @@ List<tb_product> PRODUCT = dao.product_page();
 <div class="gap"></div>
 <div id="footers"></div>
 <script src="js/전자상거래.js"></script>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script type="text/javascript">
+function search(){
+	
+	var el_txt = []
+	  $('.cart-product-title').each(function(index,item){
+		 el_txt.push($(item).text());
+		 console.log(el_txt[0]);
+	  });
+	
+	//console.log($('.cart-product-title').text());
+	//console.log(typeof($('.cart-product-title').text()));
+	
+	
+	
+	$.ajax({
+         url : "basketcon",
+         type : "post",
+         data : {
+ 			"product_name" : JSON.stringify(el_txt)
+ 		},
+         dataType : "json",
+         async: false,
+         success : function(res){
+        	 console.log(res);
+    		},
+         error : function(){
+            alert("Ajax 통신 실패~");
+         }
+      });//ajax끝
+	
+	
+}
+
+</script>
 </body>
 
 </html>

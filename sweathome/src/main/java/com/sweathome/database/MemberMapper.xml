@@ -55,6 +55,18 @@ VALUES
 		select * from MB_USER where USER_ID=#{USER_ID} and USER_PW=#{USER_PW} 
 	</select>
 	
+	<select id="product_name_select" parameterType="String" resultType="com.sweathome.domain.tb_product">
+		
+		select * FROM TB_PRODUCT where PROD_NAME = #{PROD_NAME}
+		
+	</select>
+	
+	<select id="order_select" parameterType="String" resultType="com.sweathome.domain.tb_order">
+		
+		select * FROM TB_ORDER where USER_ID = #{USER_ID}
+		
+	</select>
+	
 	<insert id="shoppint_basket_insert" parameterType="com.sweathome.domain.tb_shopping_basket">
 		insert into shopping_basket(user_id, prod_idx, prod_cnt, reg_date) values (#{USER_ID}, #{PROD_IDX}, #{PROD_CNT}, SYSDATE)
 	</insert>
@@ -123,8 +135,11 @@ VALUES
 	</update>
 	
 	<insert id="order_insert" parameterType="com.sweathome.domain.tb_order">
-		insert into tb_order(user_id, ORDER_DT, TOTAL_AMOUNT, USER_POINT, ORDER_STATUS) values (#{USER_ID},SYSTATE, #{TOTAL_AMOUNT}, #{USER_POINT}, 0})
+		insert into tb_order(user_id, ORDER_DT, TOTAL_AMOUNT, USER_POINT, ORDER_STATUS) values (#{USER_ID},SYSDATE, #{TOTAL_AMOUNT}, #{USER_POINT}, 0})
 	</insert>
 	
+	<select id="nutri_search" parameterType="String" resultType="com.sweathome.domain.tb_nutritionfact">
+		select * from tb_nutritionfact where food_name like '%'||#{keyword}||'%'
+	</select>
 	
 </mapper>

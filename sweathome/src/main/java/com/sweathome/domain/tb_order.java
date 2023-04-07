@@ -40,7 +40,7 @@ public class tb_order {
 	public int getORDER_STATUS() {
 		return ORDER_STATUS;
 	}
-	public void setORDER_STATUS(char oRDER_STATUS) {
+	public void setORDER_STATUS(int oRDER_STATUS) {
 		ORDER_STATUS = oRDER_STATUS;
 	}
 	public tb_order(int oRDER_IDX, String uSER_ID, String oRDER_DT, int tOTAL_AMOUNT, int uSER_POINT,
@@ -53,19 +53,16 @@ public class tb_order {
 		USER_POINT = uSER_POINT;
 		ORDER_STATUS = oRDER_STATUS;
 	}
+	public tb_order() {
+		super();
+	}
 	public tb_order(String uSER_ID, int tOTAL_AMOUNT, int uSER_POINT) {
 		super();
 		USER_ID = uSER_ID;
 		TOTAL_AMOUNT = tOTAL_AMOUNT;
 		USER_POINT = uSER_POINT;
 	}
-	public tb_order(String uSER_ID, int oRDER_STATUS) {
-		super();
-		USER_ID = uSER_ID;
-		ORDER_STATUS = oRDER_STATUS;
-	}
-	
-	
+
 	
 	
 	
